@@ -1,0 +1,146 @@
+/* common */
+.gnb-menu-d2 a {
+  background-color: rgba(220, 230, 223, 0.5);
+}
+#gnb-menu-d1-03 > a {
+  color: gray;
+  border-color: #7fd87d;
+}
+
+/*
+noticeList.php
+*/
+.search-cont {
+  float:right;
+  margin: 10px 10%;
+}
+.notice_board {
+  user-select: none;
+  text-align:center;
+  width: 90%;
+  border-collapse: collapse;
+  border: 3px solid #ddddda;
+  border-style: solid hidden;
+  font-size: 14px;
+}
+.notice_board th {
+  line-height: 50px;
+  border-collapse:collapse;
+  border-bottom: 2px solid #ddddda;
+}
+.notice_board td {
+  line-height: 40px;
+  max-width: 75px;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  word-wrap:normal;
+  overflow:hidden;
+  border-collapse: collapse;
+  border-bottom: 1px solid;
+  border-color: rgba(221, 221, 218, 0.4)
+}
+#th-num {
+  max-width: 20px;
+}
+#th-date {
+  max-width: 30px;
+}
+.board-title {
+  text-align: left;
+  padding: 0 10px;
+}
+.read-notice:hover {
+  color: green;
+  text-decoration-line: underline;
+  text-underline-position: under;
+  cursor:pointer;
+}
+.board-item {
+  font-size: 13px;
+  max-width: 25px;
+}
+.page-cont {
+  text-align: center;
+  margin: 2% auto;
+  margin-right: 10%;
+}
+.page-cont span {
+  color: green;
+  font-weight: bold;
+  text-decoration-line: underline;
+  text-underline-position: under;
+}
+.page-cont a {
+  color: black;
+  opacity: 0.7;
+}
+
+
+
+/*
+* view.php
+*/
+
+.notice-article {
+  width: 90%;
+  margin: 20px 0;
+  padding: 20px 0;
+  border-collapse: collapse;
+  border: 3px solid #ddddda;
+  border-style: solid hidden;
+  font-size: 14px;
+}
+.notice-article td {
+  max-width: 75px;
+  padding: 8%;
+  white-space: pre-line;
+}
+.btn-cont {
+  float: right;
+  padding:10px 20%;
+}
+.notice-title td {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 10px;
+  height:100px;
+}
+.notice-body {
+  border-top: 1px solid #ddddda;
+  line-height: 22px;
+}
+.notice-item {
+  color: gray;
+  font-size: 12px;
+  line-height: 40px;
+  padding: 5px;
+}
+
+
+
+/*
+*
+* 미디어쿼리
+*
+*/
+
+/* 모바일에서 */
+@media all and (max-width:559px) {
+  .search-cont {
+    margin: 10px 0;
+  }
+  .notice_board {
+    width: 100%;
+  }
+  .page-cont {
+    margin-right: 0;
+  }
+
+
+  .btn-cont {
+    margin: 10px 0;
+  }
+  .notice-article {
+    width: 100%;
+  }
+}

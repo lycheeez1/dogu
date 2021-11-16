@@ -1,0 +1,607 @@
+@charset "utf-8";
+/*
+font-family: 'NanumSquareRoundLight';
+font-family: 'NanumSquareRound';
+font-family: 'NanumSquareRoundBold';
+font-family: 'NanumSquareRoundExtraBold';
+*/
+
+@font-face {
+     font-family: 'locus_sangsang';
+     src: local(※), url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/locus_sangsang.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: 'NanumSquareRound';
+}
+body {
+  height: 100%;
+  text-align: center;
+  overflow-x: hidden;
+  font-family: 'NanumSquareRound';
+}
+img {
+  font-size: 12px;   /* 택데 폰트 크기 */
+  font-weight: normal;
+}
+br {
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.main_contents {
+  flex: 1;
+}
+
+::selection {
+	background-color: rgba(207, 237, 255, 0.5);
+}
+br, .main-col1, .map {
+  user-select:none;
+}
+
+/* ---------------------- *
+ *     user container     *
+ * ---------------------- */
+.user-cont {
+  user-select:none;
+  width: 70%;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: right;
+  font-size:13px;
+}
+.user-cont a {
+  color: #000; /*
+  color: #323A3F;*/
+}
+
+/* --------------------- *
+ *     gnb container     *
+ * --------------------- */
+.gnb-cont {
+  user-select:none;
+  display: block;
+  width: 80%;
+  margin: 0 auto; /*
+  background-color: yellow; */
+}
+.gnb-cont ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.gnb {
+  width: 65%;
+  float: left;
+  margin: 1.5% auto;/*
+  background-color: green; */
+}
+.gnb-logo {
+  width: 20%;
+  float: left;
+  display: inline-block;
+}
+.gnb-logo img {
+  width: 100%;
+  max-width:200px;
+}
+.gnb-btn-box {
+  width: 4%;/* 작은 화면에서는 5%로 키우기 */
+  max-width: 40px;
+  float:right;
+  margin: 1.5% 5.5% 0 0;
+}
+.gnb-btn-line:before {
+  content:"";
+  display: block;
+  width:80%;
+  border-bottom: 3px solid gray;
+  margin-top:15%;
+}
+
+
+.gnb-menu-d1 {
+  width:22.3%;
+  display: block;/*
+  max-width: 200px;*/
+  float: left;
+  margin: 0 5%;
+  line-height: 32px;
+  font-size: 20px; /*
+  background-color: lightblue; */
+}
+.gnb-menu-d1 > a, .gnb-menu-d2 a {
+  display: inline-block; /* a 태그의 클릭 범위를 넓히려면 block으로 */
+  color: black;
+  border-style: hidden hidden solid hidden;
+  border-color: transparent;
+  overflow: hidden;
+  padding: 5px;
+  font-family: 'locus_sangsang';
+} /*
+.gnb-menu-d2 a {
+  font-family: 'NanumSquareRound';
+} */
+.gnb-menu-d1 > a:hover {
+  color: #8C968D;
+  border-color: #7fd87d;
+}
+.gnb-menu-d2 {
+  position: absolute;
+  display: block;
+  font-size: 16px;
+  width: 12%;
+  height: 0;
+  line-height: 40px;
+  overflow: hidden;
+
+  -webkit-transition: height .4s;
+	transition: height .4s;
+	-webkit-transition-delay: .1s;
+	transition-delay: .1s;
+  -webkit-transition-duration: height .3s;
+  -moz-transition: height .3s;
+  -o-transition: height .3s;
+  color: black;
+  background-color: #7fd87d;
+  border-radius: 8px;
+}
+.gnb-menu-d2 a {
+  width:100%;
+  margin: 0;
+  padding:0;
+  display: block;
+  color: #323A3F;
+  text-align: center;
+}
+.gnb-menu-d1:hover .gnb-menu-d2 {
+  height:165px;
+}
+.gnb-menu-d1:hover #gnb-menu-d2-biz {
+  height:124px;
+}
+.gnb-menu-d1:hover #gnb-menu-d2-notice {
+  height:40px;
+}
+.gnb-menu-d2 a:hover {
+  color: #F9E480;
+}
+
+
+/* -------------------- *
+ *     layer pop-up     *
+ * -------------------- */
+.popup-win {
+  user-select: none;
+  -ms-overflow-style: none;
+  display: none;
+  width: 60%;
+  max-width: 700px;
+  height:50%;
+  padding: 15px;
+  overflow: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+	background: -webkit-linear-gradient(#fff5c4, #F9E480, #7FD87D);
+	background: -moz-linear-gradient(#fff5c4, #F9E480, #7FD87D);
+	background: -o-linear-gradient(#fff5c4, #F9E480, #7FD87D);
+	background: linear-gradient(#fff5c4, #F9E480, #7FD87D);
+  text-align: left;
+  border-radius: 10px;
+}
+.popup-win::-webkit-scrollbar {
+  display:none;
+}
+.popup-win span, .popup-win a {
+  color: black;
+}
+/* popup header */
+.popup-header {
+  width: 100%;
+  height: 10%;
+  margin: 20px auto;
+  display: block;
+  font-size: 24px;
+}
+.popup-title {
+  width: 90%;
+  float: left;
+}
+.popup-title>img {
+  display: block;
+  float:left;
+  margin: 0 20px;
+  padding: 0 10px;
+  max-height: 50px;
+}
+.popup-title>span {
+  font-family: 'locus_sangsang';
+  display: block;
+  float:left;
+  margin: 8px;
+}
+.popup-exit {
+  width: 10%;
+  float: right;
+  display: inline-block;
+  max-width: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+/* popup body */
+.popup-body {
+  width: 98%;
+  height: 76%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 6px;
+}
+/* 팝업 gnb */
+.gnb-pop-d1 {
+  width: 23.3%;
+  display: block;
+  float: left;
+  font-size: 19px;
+  font-weight: bold;
+  text-align: left;
+  margin: 5.5% 5%;
+}
+.gnb-pop-d1>a:hover {
+  opacity: 0.5;
+}
+.gnb-pop-d2 {
+  display: block;
+  float: right;
+  width: 90%;
+  margin: 10px 0;
+  padding:0;
+  line-height: 30px;
+  font-size: 16px;
+  list-style-type: disc;
+  color:#323A3F;
+}
+.gnb-pop-d2 a {
+  color:#323A3F;
+}
+.gnb-pop-d2, .gnb-pop-d2 a:hover {
+  color: #7fd87d;
+}
+.blurbg {
+  display:none;
+  background-color:black;
+  position:absolute;
+  left:0;
+  top:0;
+}
+
+/* ------------------------ *
+ *     main (main gate)     *
+ * ------------------------ */
+.main_contents {
+  width: 100%;
+  overflow: hidden;
+  text-align: left;
+}
+.main_contents > img {
+  width: 100%;
+  height: inherit;
+}
+
+/* --------------- *
+ *      fooer      *
+ * --------------- */
+.footer {
+  width: 70%;
+  margin: 0 auto;
+  text-align:left;
+  font-size: 14px;
+  color: #8C968D;
+  font-family: 'NanumSquareRound';
+}
+.footer-col1 {
+  width:80%;
+}
+.footer-col2 {
+  width: 20%;
+}
+.footer-col1, .footer-col2 {
+  float: left;
+  margin: 20px 0;
+  display: inline-block;
+}
+.footer-col1-logo {
+  width:20%;
+}
+.footer-col1-info {
+  width:75%;
+  line-height: 25px;
+  padding: 5px;
+}
+.footer-col1-info a {
+  text-decoration: underline;
+  color: #8C968D; /*
+  color: #323A3F*/
+}
+.footer-col1-logo, .footer-col1-info{
+  float: left;
+  display: inline-block;
+}
+.footer-col2-nts {
+  float: right;
+  margin-top: 5%;
+}
+.footer-col1-logo img {
+  max-width: 100px;
+}
+.footer-col2-nts img {
+  max-width: 110px; /*
+  border:1px solid #ccc;
+  padding: 5%; */
+  margin-top: 5%;
+}
+.footer-col2-nts span {
+  display: block;
+  text-align:center;
+  font-size: 12px;
+  color: #8C968D;
+}
+
+/* 플로팅 버튼 (Top) */
+.btn-top {
+  position: fixed;
+  right: 5%;
+  bottom: 20%;
+  display: none;
+  z-index: 999;
+  padding: 0.5% 0.65%; /* PC 풀스크린 기준 */
+  border-radius: 5px;
+  background-color: #F9E480;
+  box-shadow: 1px 1px 5px gray;
+}
+.btn-top>a {
+  color: #8C968D;
+  font-family: 'locus_sangsang', 'NanumSquareRound';
+}
+
+
+/*
+*
+미디어쿼리
+*
+*/
+@media all and (min-width:1024px) {
+	/* PC (해상도 1024px)*/
+}
+
+@media all and (min-width:768px) and (max-width:1023px) {
+  .gnb-menu-d1 {
+    width:29%;
+    margin: 0 2%;
+    font-size: 19px;
+    line-height: 30px;
+  }
+  .gnb-menu-d2 {
+    width: 15%;
+    line-height: 38px;
+    font-size: 15px;
+  }
+  .gnb-btn-box {
+    margin: 2% 5.5% 0 0;
+  }
+  .footer {
+    width: 84%;
+    font-size: 13px;
+  }
+  .footer-col1-logo img, .footer-col2-nts img {
+    max-width: 90px;
+  }
+  .footer-col1-info {
+    line-height: 22px;
+  }
+  .btn-top {
+    padding:0.7% 0.95%;
+  }
+  .popup-win {
+    width: 60%;
+    padding: 15px;
+  }
+  .popup-header {
+    width: 100%;
+    font-size: 22px;
+  }
+  .popup-body {
+    width: 100%;
+  }
+  /* 팝업 gnb */
+  .gnb-pop-d1 {
+    font-size: 17px;
+    margin: 4%;
+  }
+  .gnb-pop-d2 {
+    width: 90%;
+    margin: 10px 0;
+    padding:0;
+    line-height: 28px;
+    font-size: 15px;
+  }
+}
+
+@media all and (min-width:560px) and (max-width:767px) {
+  .user-cont {
+    width: 84%
+  }
+  .gnb-cont {
+    width: 85%;
+  }
+  .gnb {
+    width: 75%;
+    margin: 0.5% auto;
+  }
+  .gnb-menu-d1 {
+    width: 30%;
+    margin:0;
+    font-size: 17px;
+    line-height: 30px;
+  }
+  .gnb-menu-d2 {
+    width: 20%;
+    line-height: 38px;
+    font-size: 14.5px;
+  }
+  .gnb-btn-box {
+    width: 5%;
+    float: left;
+    margin: 1% 0;
+  }
+  .footer {
+    width: 90%;
+    font-size: 13px;
+  }
+  .footer-col1-logo img, .footer-col2-nts img {
+    max-width: 80px;
+  }
+  .footer-col1-info {
+    line-height: 20px;
+  }
+  .btn-top {
+    padding: 0.75% 1.1%;
+  }
+  .popup-win {
+    width: 75%;
+    height: 50%;
+    padding: 15px;
+  }
+  .popup-header {
+    width: 100%;
+    font-size: 22px;
+  }
+  .popup-body {
+    width: 100%;
+  }
+  /* 팝업 gnb */
+  .gnb-pop-d1 {
+    font-size: 17px;
+    margin: 4%;
+  }
+  .gnb-pop-d2 {
+    width: 90%;
+    margin: 10px 0;
+    padding:0;
+    line-height: 25px;
+    font-size: 14px;
+  }
+}
+
+@media all and (max-width:559px) {
+  .logo-pc {
+  }
+  .user-cont {
+    width:88%;
+    padding:15px;
+  }
+  .gnb-cont {
+    width: 92%;
+    margin: 0 auto;
+  }
+  .gnb {
+    width: 70%;
+    margin-left: 2%;
+  }
+  .gnb-logo {
+    width: 23%
+  }
+  .gnb-menu-d1 {
+    float: left;
+    width: 33.3%;
+    margin: 0;
+    font-size: 17px;
+    line-height: 30px;
+  }
+  .gnb-menu-d1 a{
+     float:left;
+  }
+  .gnb-menu-d2 {
+    display: none;
+  }
+  .gnb-btn-box {
+    width: 4%;
+    margin: 3.4% 0 0 0;
+    float:left;
+  }
+  .footer {
+    width: 94%;
+    font-size: 11px;
+  }
+  .footer-col1-logo img {
+    max-width: 50px;
+    margin-top:10%;
+  }
+  .footer-col2-nts img {
+    max-width: 60px;
+  }
+  .footer-col1-info {
+    line-height: 15px;
+  }
+  .btn-top {
+    padding: 1.25% 1.6%;
+    background-color: #7FD87D;
+  }
+
+  body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+  .popup-win {
+    width: 92%;
+    height: 50%;
+    padding: 0 10px;
+  }
+  .popup-header {
+    width: 100%;
+    font-size: 22px;
+  }
+  .popup-body {
+    width: 100%;
+    height:74%
+  }
+  /* 팝업 gnb */
+  .gnb-pop-d1 {
+    width: 24%;
+    font-size: 17px;
+    margin: 6% 4.5%;
+  }
+  .gnb-pop-d2 {
+    width: 94%;
+    margin: 20px 0;
+    padding:0;
+    line-height: 25px;
+    font-size: 14px;
+  }
+  .footer-col2-nts span {
+    font-size: 9px;
+  }
+}

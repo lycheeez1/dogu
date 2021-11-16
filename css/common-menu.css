@@ -1,0 +1,246 @@
+@charset "utf-8";
+@font-face {
+     font-family: 'locus_sangsang';
+     src: local(※), url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/locus_sangsang.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+  margin: 0;
+  text-decoration: none;
+  font-family: 'NanumSquareRound';
+}
+body {
+  text-align: center;
+  font-family: 'NanumSquareRound';
+  font-size: 16px;
+}
+span, ul, li, p {
+  font-family: 'NanumSquareRound';
+  color:#323A3F;
+}
+br {
+  font-family: sans-serif;
+}
+
+.main {
+  width: 90%;
+  overflow: hidden;
+  text-align: left;
+  margin: 0 auto;
+}
+.main-col1 {
+  width: 28%;
+  display: inline-block;
+  float: left;
+}
+.main-col2 {
+  width: 72%;
+  display: inline-block;
+  float: left;
+  line-height: 28px;
+  margin-bottom: 80px;
+}
+.main-col2 img {
+  width: 80%;
+  max-width: 700px;
+  margin: 5% 0;
+}
+.main-col2-row1, .main-col2-row2, .main-col2-row3, .main-col2-row4 {
+  margin: 80px 0;
+  margin-right: 10%;
+}
+.main-col2-row3 img {
+  max-width: 640px
+}
+
+.main-chap {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+
+.sideMenu {
+  user-select: none;
+  position: absolute;
+  display: inline-block;
+  min-width: 140px;
+  margin-left: 5%;
+  padding: 10px;
+  top: 35%;
+  border-radius: 10px; /*
+  border: 5px solid #F9E480;*/
+  background-color: #F9E480;
+  box-shadow: 2px 2px 8px gray;
+}
+.sideMenu span {
+  font-size: 18px;
+  font-family: 'locus_sangsang';
+  color:#8C968D;
+}
+.sideMenu ul {
+  margin: 16px;
+}
+.sideMenu > ul {
+  list-style: none;
+}
+.sideMenu>ul>li>ul>li {
+  list-style-type: disc;
+  color: #8C968D;
+}
+.sideMenu a {
+  line-height: 30px;
+  color:#8C968D;
+}
+.sideMenu a:hover {
+  color: #fff;
+}
+
+
+.map {
+  display: block;
+  margin:0;
+  padding:0;
+}
+.map iframe, .map img, .hide {
+  border:1px solid #ccc;
+  height: inherit;
+  width: 80%;
+  max-width: 500px;
+}
+.hide {
+  overflow:hidden;
+  border:1px solid #dfdfdf;
+  border-color:rgba(0,0,0,.1);
+  border-radius:0 0 2px 2px;
+  background-color:#f9f9f9;
+}
+.hide div {
+  float:right;
+  padding:4px 10px;
+}
+.hide a {
+  font-size:12px;
+  text-decoration:none;
+  color:#000;
+}
+.map-descrption {
+  margin: 0;
+  font-size: 14px;
+}
+
+
+/*
+*
+미디어쿼리
+*
+*/
+@media all and (min-width:1024px) {
+	/* PC (해상도 1024px)*/
+}
+
+@media all and (min-width:768px) and (max-width:1023px) {
+  body {
+    font-size: 15px;
+  }
+  .main {
+    width: 100%;
+  }
+  .main-col2 img {
+    width: 90%;
+  }
+  .sideMenu {
+    min-width: 100px;
+    padding: 8px;
+    margin-left: 3.5%;
+    font-size: 15px;
+  }
+}
+
+@media all and (min-width:560px) and (max-width:767px) {
+  body {
+    font-size: 15px;
+  }
+  .main {
+    width: 100%;
+  }
+  .main-col2 img {
+    width: 100%;
+  }
+  .sideMenu {
+    min-width: 100px;
+    margin-left: 2.5%;
+    padding: 5px;
+    font-size: 14px;
+  }
+  .sideMenu ul {
+    margin: 10px;
+  }
+  .sideMenu span {
+    font-size: 16px;
+  }
+}
+
+@media all and (max-width:559px) {
+  body {
+    font-size: 14px;
+  }
+  .gnb-h-menu-d1 a {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .gnb-h-menu-d2 {
+    display: none;
+  }
+  .main-col1, .sideMenu {
+    display: none;
+  }
+  .main-col2 {
+    width: 90%;
+    display: block;
+    margin: 0 5%;
+    padding:0;
+  }
+  main {
+    padding: 0
+  }
+  #anc-dogu-01, #anc-dogu-02, #anc-dogu-03, #anc-dogu-04,
+  #anc-business-01, #anc-business-02, #anc-business-03,
+  #anc-notice-01 {
+    display: none;
+  }
+  .main-col2 img {
+    width: 100%;
+  }
+  .main-col2-row1, .main-col2-row2, .main-col2-row3, .main-col2-row4 {
+    margin: 100px 0;
+  }
+  .map-descrption span {
+    line-height: 30px;
+  }
+
+  /* 공지사항 페이지 */
+  .search-cont {
+    margin: 10px 0;
+  }
+  .notice_board {
+    width: 100%;
+  }
+
+
+/*
+@media all and (max-width:359px) {
+  .main-col1, .sideMenu {
+    display: none;
+  }
+} */
