@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="아이가 아이답게 자랄 수 있는 세상을 만듭니다" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:type" content="website" />
+  <link rel="shortcut icon" type="image/x-icon" href="login.png">
+  <link rel="stylesheet" type="text/css" href="../css/common.css">
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+
+  <title>로그인</title>
+  <style type="text/css">
+    body {
+      text-align: center;
+      font-family: 'NanumSquareRound', 'locus_sangsang';
+    }
+    .login-cont {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+    input[type=text], input[type=password] {
+      display: inline-block;
+      width: 200px;
+      padding: 10px 20px;
+      margin: 5px 0; /*
+      box-sizing: border-box; */
+    font-family: 'NanumSquareRound';
+    }
+    button {
+      width: 240px;
+      margin-top: 10px;
+      padding: 15px 10px;
+      border: none;
+      color: white;
+      background-color: #7FD87D;
+      cursor: pointer;
+      font-family: 'NanumSquareRound';
+    }
+    button:hover {
+      opacity: 0.7;
+    }
+    .container {
+      padding: 100px;
+    }
+    footer {
+      font-size: 10px;
+      font-family: 'NanumSquareRound';
+    }
+  </style>
+</head>
+<body>
+<!--
+  <div id="img">
+    <img src="login.png"  width="160" height="160">
+  </div> -->
+  <div class="login-cont">
+    <div class="login-header" style="width:50%;margin:0 auto;">
+      <a href="../index.php" title="메인으로 이동">
+        <img src="../img/dogu2.png" style="float:left;height:10%;max-height:54px" alt="로고">
+      </a>
+      <div style="float:left;margin:10% 15px"><h1>LOGIN</h1></div>
+    </div>
+    <form method="POST" action="login.php">
+      <div class="container">
+        <input type="text" placeholder="ID" name="aid" required> <br/>
+        <input type="password" placeholder="Password" name="apw" required> <br/>
+        <button type="submit">로그인</button> <br/>
+      </div>
+    </form>
+  </div>
+
+  </body>
+  </html>
