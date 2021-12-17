@@ -6,13 +6,12 @@
 
   session_start();
 
-  // 10분 후 세션 만료
-  if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 600)) {
+  if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
     unset($_SESSION["ADMIN"]);
 //    session_unset();
 //    session_destroy();
   }
-  $_SESSION['LAST_ACTIVITY'] = time(); // 타임스탬프
+  $_SESSION['LAST_ACTIVITY'] = time();
 
 ?>
 
@@ -26,13 +25,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="사단법인 도구(Dogu) - 도구(Dogu)">
   <meta property="og:site_name" content="사단법인 도구(Dogu)">
-  <meta property="og:description" content="아이가 아이답게 자랄 수 있는 세상을 만듭니다" /> <!--
-  <meta property="og:url" content="https://www.dogu.or.kr"> -->
+  <meta property="og:description" content="아이가 아이답게 자랄 수 있는 세상을 만듭니다" />
   <meta property="og:image" content="../img/rsz_dogu1.png">
-  <meta name="twitter:image" content="../img/rsz_dogu1.png"> <!--
-  <link rel="canonical" href="https://www.dogu.or.kr"> -->
+  <meta name="twitter:image" content="../img/rsz_dogu1.png">
   <link rel="shortcut icon" type="image/x-icon" href="../img/dogu2.png">
 
   <title>도구(Dogu) | 사단법인 도구(Dogu)</title>
@@ -55,7 +51,6 @@
     body {
       font-family: 'NanumSquareRound';
     }
-
     #gnb-menu-d1-03 > a {
       color: gray;
       border-color: #7fd87d;
@@ -71,9 +66,13 @@
       font-size: 13px;
     }
     button {
-      padding: 3px 10px;
+      padding: 5px 10px;
       font-size:14px;
       border-color: transparent;
+      border-radius: 8%
+    }
+    button:hover {
+      cursor:pointer
     }
     .notice_board {
       user-select: none;
