@@ -11,9 +11,52 @@
   }
 ?>
 
+<!DOCTYPE html>
 <html>
 <head>
-  <title>관리자 페이지 - 공지사항 등록</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공지사항 등록</title>
+  <!-- include libraries(jQuery, bootstrap) -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- include summernote css/js -->
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#summernote').summernote({
+        lang: 'ko-KR',
+        height: 300,
+        minHeight: null,
+        maxHeight:null,
+        toolbar: [
+          // [groupName, [list of button]]
+          ['style', ['bold', 'italic', 'underline', 'clear']],
+          ['font', ['strikethrough', 'superscript', 'subscript']],
+          ['fontsize', ['fontsize']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['height', ['height']],
+          ['insert', ['picture', 'link', 'video']]
+        ]
+      });
+
+      $(function(){
+        $("#register-btn").click(function(){
+          var summernoteContent = $('#summernote').summernote('code');
+          alert(summernoteContent);
+        });
+      });
+
+      $("#btn-tolist").click(function(){
+        location.href='../noticeList.php';
+      });
+    });
+
+
+  </script>
   <style type="text/css">
     @font-face {
         font-family: 'NanumSquareRound';
@@ -23,89 +66,42 @@
     }
     body {
       text-align: center;
-      margin: 30px;
       font-family: 'NanumSquareRound';
     }
-    form {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 60%;
-      height : 60%;
-      max-width: 850px;
-      max-height: 550px;
+    .form-area {
+      margin: 5%;
     }
-    .toolbar {
-      padding: 10px;
-    }
-    input[type=text], textarea {
-      white-space: pre-line;
-      font-family: 'NanumSquareRound';
-    }
-    input[type=text] {
-      display: inline-block;
-      width: 100%;
-      padding: 5px 10px;
-      margin: 5px 0;
-      line-height: 32px;
-      font-size: 22px;
-    }
-    textarea {
-      width: 100%;
-      height: 350px;
-      padding: 10px;
-      line-height: 18px;
-      font-size: 15px;
-    }
-    button {
+    #register-btn {
       width: 100px;
       margin-top: 10px;
       padding: 10px;
-      border: none;
-      border-radius: 2px;
-      color: white;
-      background-color: green;
-      cursor: pointer;
-      font-family: 'NanumSquareRound';
       font-size: 12pt;
     }
-    button:hover {
-      background-color: #7FD87D;
+    #register-btn:hover {
+      background-color: #7fd87d;
+      color: white;
     }
-    .btn-cancel:hover {
-      background-color: red;
+    input[type=file]:hover {
+      cursor:pointer
     }
-    footer {
-      font-size: 10px;
-      font-family: 'NanumSquareRound';
-    }
-    /* 모바일에서 */
-    @media all and (max-width:559px) {
-      form {
-        width: 75%;
-        margin: 0;
-      }
-    }
-    </style>
+  </style>
 </head>
 <body>
-  <h2>공지사항 등록</h2>
-
-  <form method="POST" action="register-check.php">
-    <div class="form-area">
-      <div class="toolbar">
-        툴바 영역
-      </div>
-      <div>
-        <input type="text" placeholder="제목" name="title" required>
-        <textarea placeholder="내용" name="body" required></textarea>
-      </div>
-      <button type="submit">등록</button> <!--
-      <button class="btn-cancel" type="button">취소</button> -->
+  <h3>공지사항 등록</h3>
+  <button class="btn contact-btn" id="btn-tolist" style="float:left;margin-left:10%">&lt; 목록으로</button>
+  <div class="form-area">
+    <form method="POST" enctype="multipart/form-data" action="register-check.php">
+      <input type="hidden" name="imgUrl" id="imgUrl" value="">
+      <input type="hidden" name="attachFile" id="attachFile" value="">
+      <div class="form-area">
+        <div>
+          <input type="text" class="form-control" placeholder="제목" name="title" required>
+          <textarea id="summernote" name="body" required></textarea>
+          <input type="file" value="1" name="attached_file" />
+        </div>
     </div>
-  </form>
-
-
+    <button type="submit" class="btn contact-btn" id="register-btn">등록</button>
+    </form>
+  </div>
 </body>
 </html>
