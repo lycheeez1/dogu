@@ -29,9 +29,7 @@
   <meta name="description" content="아이가 아이답게 자랄 수 있는 세상을 만듭니다" />
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <meta property="og:type" content="website">
-  <meta property="og:title" content="사단법인 도구(Dogu) - 도구(Dogu)">
   <meta property="og:site_name" content="사단법인 도구(Dogu)">
   <meta property="og:description" content="아이가 아이답게 자랄 수 있는 세상을 만듭니다" />
   <meta property="og:url" content="https://www.dogu.or.kr">
@@ -95,10 +93,15 @@
     button {
       padding: 5px 10px;
       font-size:14px;
+      border-color: transparent;
+      border-radius: 8%
+    }
+    button:hover {
+      cursor:pointer
     }
     .btn-cont {
       float: right;
-      padding:10px 20%;
+      padding:10px 10%;
     }
     .notice-title td {
       font-size: 20px;
@@ -122,7 +125,7 @@
       font-size: 15px;
     }
 
-    /* 모바일에서 */
+    /* 모바일*/
     @media all and (max-width:559px) {
       .main-col2 {
         width: 100%;
@@ -265,6 +268,21 @@
             <td style="color:lightgray; font-weight:bold; padding:0 5px;"> | </td>
             <td class="notice-item">조회</td>
             <td class="notice-item" id="notice-hits"><?=$notice['NHIT']?></td>
+          </tr>
+	  <?php
+	      $attfile = $notice['NFILE'];
+	      if(isset($attfile)) {
+		  echo '<style type="text/css">
+		  	    #attached-tr {display:block;}
+			</style>';
+	      } else {
+		  echo '<style type="text/css">
+		  	   #attached-tr {display:none;}
+			</style>';
+	      }
+	  ?>
+	  <tr id="attached-tr">
+            <td><a href="../../upload/<?=$notice['NFILE'];?>" download><?=$notice['NFILE']?></a></td>
           </tr>
           <tr>
             <td class="notice-body" colspan="5"><?=$notice['NBODY']?></td>
