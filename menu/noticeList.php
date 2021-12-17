@@ -51,6 +51,7 @@
     body {
       font-family: 'NanumSquareRound';
     }
+
     #gnb-menu-d1-03 > a {
       color: gray;
       border-color: #7fd87d;
