@@ -73,6 +73,13 @@ br, .main-col1, .map {
   color: #000; /*
   color: #323A3F;*/
 }
+.btn-logout>a {
+  display: inline-block;
+  padding: 2px 4px;
+  margin:5px 0;
+  background-color: lightgray;
+  border-radius: 8%
+}
 
 /* --------------------- *
  *     gnb container     *
