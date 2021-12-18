@@ -40,14 +40,21 @@
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script type="text/javascript" src="../js/scroll.js"></script>
   <script type="text/javascript" src="../js/click.js"></script>
+  <!--
   <script type="text/javascript">
-    $(function(){
-      $(".read-notice").click(function(){
-        var action_url = $(this).attr("data-action");
-        $(location).attr("href", action_url);
+    $(document).ready(function(){
+      $(function(){
+        $(".read-notice").click(function(){
+          var action_url = $(this).attr("data-action");
+          $(location).attr("href", action_url);
+
+        });
       });
+      $(".btn-search").click(function(){
+         $(location).attr("href", "./notice/register.php");
+     });
     });
-  </script>
+  </script> -->
   <style type="text/css">
     body {
       font-family: 'NanumSquareRound';
@@ -120,7 +127,11 @@
       text-align: left;
       padding: 0 10px;
     }
-    .read-notice:hover {
+    .board-title>a {
+      text-decoration: none;
+      color: black;
+    }
+    .board-title>a:hover {
       color: green;
       text-decoration-line: underline;
       text-underline-position: under;
@@ -322,7 +333,7 @@
             <tr>
               <td class="board-item"><?=$row_num;?></td>
               <td class="board-title">
-                <span class="read-notice" data-action="./notice/view.php?nid=<?=$index?>"><?=$title;?></span>
+                <a href="./notice/view.php?nid=<?=$index?>"><?=$title;?></a>
               </td>
               <td class="board-item"><?=$date;?></td>
               <td class="board-item"><?=$hits;?></td>
