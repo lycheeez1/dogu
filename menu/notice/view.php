@@ -85,8 +85,22 @@
     }
     td {
       max-width: 75px;
-      padding: 8%;
+      padding: 5%;
       white-space: pre-line;
+    }
+    #attached-tr>td {
+      display: block;
+      float: right;
+      margin:10px 0;
+      padding: 2%;
+      max-width: none;
+      font-size: 12px;
+    }
+    #attached-tr a {
+      color: black;
+    }
+    #attached-tr a:hover {
+      text-decoration: underline;
     }
     button {
       padding: 5px 10px;
@@ -104,18 +118,16 @@
     .notice-title td {
       font-size: 20px;
       font-weight: bold;
-      padding: 0 10px;
-      height:100px;
-    }
-    .notice-body {
-      border-top: 1px solid #ddddda;
-      line-height: 24px;
+      padding: 3% 10px;
     }
     .notice-item {
       color: gray;
       font-size: 12px;
-      line-height: 40px;
       padding: 5px;
+    }
+    .notice-line td {
+      padding: 1%;
+      border-bottom: 1px solid #ddddda;
     }
     .btn-tolist {
       float: right;
@@ -131,8 +143,6 @@
       }
       .notice-title td {
         font-size: 18px;
-        padding: 0 10px;
-        height:60px;
       }
       td {
         padding: 10% 5%;
@@ -143,9 +153,6 @@
       .notice-article {
         width: 100%;
         font-size: 16px;
-      }
-      .notice-item {
-        line-height: 20px;
       }
       .btn-cont {
        padding:10px;
@@ -175,7 +182,7 @@
   }
 
     $attfile = $notice['NFILE'];
-    if(isset($attfile)) {
+    if(strlen($attfile) > 1) {
       echo '<style type="text/css">
               #attached-tr {display:block;}
             </style>';
@@ -274,17 +281,18 @@
           <tr class="notice-title">
             <td colspan="5"><?=$notice['NTITLE']?></td>
           </tr>
-          <tr style="float:left">
+          <tr class="notice-info" style="float:left">
             <td class="notice-item">등록일</td>
             <td class="notice-item" id="notice-date"><?=$notice['NDATE']?></td>
             <td style="color:lightgray; font-weight:bold; padding:0 5px;"> | </td>
             <td class="notice-item">조회</td>
             <td class="notice-item" id="notice-hits"><?=$notice['NHIT']?></td>
           </tr>
+          <tr class="notice-line">
+            <td></td>
+          <tr>
           <tr id="attached-tr">
-            <td>
-            <a href="../../upload/<?=$notice['NFILE'];?>" download><?=$notice['NFILE']?></a>
-          </td>
+            <td colspan="5">[첨부파일]&nbsp<a href="../../upload/<?=$notice['NFILE'];?>" download><?=$notice['NFILE']?></a></td>
           </tr>
           <tr class="notice-body">
             <td colspan="5"><?=$notice['NBODY']?></td>
