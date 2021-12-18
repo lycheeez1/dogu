@@ -6,13 +6,13 @@
 
   session_start();
 
-  // 10분 후 세션 만료
-  if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 600)) {
+  // 30분 후 세션 만료
+  if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
     unset($_SESSION["ADMIN"]);
 //    session_unset();
 //    session_destroy();
   }
-  $_SESSION['LAST_ACTIVITY'] = time(); // 타임스탬프
+  $_SESSION['LAST_ACTIVITY'] = time();
 
 ?>
 
@@ -322,7 +322,7 @@
             <tr>
               <td class="board-item"><?=$row_num;?></td>
               <td class="board-title">
-                <span class="read-notice" data-action="notice/view.php?nid=<?=$index?>"><?=$title;?></span>
+                <span class="read-notice" data-action="./notice/view.php?nid=<?=$index?>"><?=$title;?></span>
               </td>
               <td class="board-item"><?=$date;?></td>
               <td class="board-item"><?=$hits;?></td>
