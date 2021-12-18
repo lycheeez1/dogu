@@ -32,10 +32,8 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="사단법인 도구(Dogu)">
   <meta property="og:description" content="아이가 아이답게 자랄 수 있는 세상을 만듭니다" />
-  <meta property="og:url" content="https://www.dogu.or.kr">
   <meta property="og:image" content="../../img/rsz_dogu1.png">
   <meta name="twitter:image" content="../../img/rsz_dogu1.png">
-  <link rel="canonical" href="https://www.dogu.or.kr">
   <link rel="shortcut icon" type="image/x-icon" href="../../img/dogu2.png">
 
   <title>도구(Dogu) | 사단법인 도구(Dogu)</title>
@@ -125,7 +123,7 @@
       font-size: 15px;
     }
 
-    /* 모바일*/
+    /* 모바일에서 */
     @media all and (max-width:559px) {
       .main-col2 {
         width: 100%;
@@ -161,21 +159,35 @@
 <body>
   <!-- 최상단 로그인 영역 -->
   <?php
-    $admin = $_SESSION['ADMIN'];
-    if(isset($admin) && !empty($admin)) {
+  $admin = $_SESSION['ADMIN'];
+  if(isset($admin) && !empty($admin)) {
+    echo '<style type="text/css">
+            .btn-login {display:none;}
+            .greeting {display:block;}
+            .btn-logout {display:block;}
+          </style>';
+  } else {
+    echo '<style type="text/css">
+            .btn-login {display:block;}
+            .greeting {display:none;}
+            .btn-logout {display:none;}
+          </style>';
+  }
+
+    $attfile = $notice['NFILE'];
+    if(isset($attfile)) {
       echo '<style type="text/css">
-              .btn-login {display:none;}
-              .greeting {display:block;}
+              #attached-tr {display:block;}
             </style>';
     } else {
       echo '<style type="text/css">
-              .btn-login {display:block;}
-              .greeting {display:none;}
+              #attached-tr {display:none;}
             </style>';
     }
   ?>
   <div class="user-cont">
-    <div class="btn-login"><a href="../../authentication/login.html">로그인</a></div>
+    <div class="btn-login"><a href="../authentication/login.html">로그인</a></div>
+    <div class="btn-logout"><a href="../authentication/logout.php">로그아웃</a></div>
     <div class="greeting"><?=$admin;?> 계정 접속 중</div>
   </div>
   <!-- 최상단 로그인 영역 end -->
@@ -269,23 +281,13 @@
             <td class="notice-item">조회</td>
             <td class="notice-item" id="notice-hits"><?=$notice['NHIT']?></td>
           </tr>
-	  <?php
-	      $attfile = $notice['NFILE'];
-	      if(isset($attfile)) {
-		  echo '<style type="text/css">
-		  	    #attached-tr {display:block;}
-			</style>';
-	      } else {
-		  echo '<style type="text/css">
-		  	   #attached-tr {display:none;}
-			</style>';
-	      }
-	  ?>
-	  <tr id="attached-tr">
-            <td><a href="../../upload/<?=$notice['NFILE'];?>" download><?=$notice['NFILE']?></a></td>
+          <tr id="attached-tr">
+            <td>
+            <a href="../../upload/<?=$notice['NFILE'];?>" download><?=$notice['NFILE']?></a>
+          </td>
           </tr>
-          <tr>
-            <td class="notice-body" colspan="5"><?=$notice['NBODY']?></td>
+          <tr class="notice-body">
+            <td colspan="5"><?=$notice['NBODY']?></td>
           </tr>
         </table>
         <!-- 공지 내용 영역 end -->
