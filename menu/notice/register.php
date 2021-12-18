@@ -31,6 +31,7 @@
         height: 300,
         minHeight: null,
         maxHeight:null,
+        /*
         toolbar: [
           // [groupName, [list of button]]
           ['style', ['bold', 'italic', 'underline', 'clear']],
@@ -40,13 +41,13 @@
           ['para', ['ul', 'ol', 'paragraph']],
           ['height', ['height']],
           ['insert', ['picture', 'link', 'video']]
-        ]
+        ]*/
       });
 
       $(function(){
         $("#register-btn").click(function(){
           var summernoteContent = $('#summernote').summernote('code');
-          alert(summernoteContent);
+//          alert(summernoteContent);
         });
       });
 
