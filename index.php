@@ -9,7 +9,7 @@
 //    session_unset();
 //    session_destroy();
   }
-  $_SESSION['LAST_ACTIVITY'] = time();
+  $_SESSION['LAST_ACTIVITY'] = time(); // 타임스탬프
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +24,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="사단법인 도구(Dogu)">
   <meta property="og:url" content="http://dogu.or.kr">
+  <meta property="og:title" content="[사단법인 도구(Dogu) - 도구(Dogu)] ">
   <meta property="og:image" content="img/rsz_dogu1.png">
   <meta name="twitter:image" content="img/rsz_dogu1.png">
   <meta property="og:description" content="아이가 아이답게 자랄 수 있는 세상을 만듭니다" />
@@ -50,26 +51,26 @@
   <div class="user-gnb-wrap"> -->
     <!-- 최상단 로그인 영역 -->
     <?php
-    $admin = $_SESSION['ADMIN'];
-    if(isset($admin) && !empty($admin)) {
-      echo '<style type="text/css">
-              .btn-login {display:none;}
-              .greeting {display:block;}
-              .btn-logout {display:block;}
-            </style>';
-    } else {
-      echo '<style type="text/css">
-              .btn-login {display:block;}
-              .greeting {display:none;}
-              .btn-logout {display:none;}
-            </style>';
-    }
-  ?>
-  <div class="user-cont">
-    <div class="btn-login"><a href="../authentication/login.html">로그인</a></div>
-    <div class="btn-logout"><a href="../authentication/logout.php">로그아웃</a></div>
-    <div class="greeting"><?=$admin;?> 계정 접속 중</div>
-  </div>
+      $admin = $_SESSION['ADMIN'];
+      if(isset($admin) && !empty($admin)) {
+        echo '<style type="text/css">
+                .btn-login {display:none;}
+                .greeting {display:block;}
+                .btn-logout {display:block;}
+              </style>';
+      } else {
+        echo '<style type="text/css">
+                .btn-login {display:block;}
+                .greeting {display:none;}
+                .btn-logout {display:none;}
+              </style>';
+      }
+    ?>
+    <div class="user-cont">
+      <div class="btn-login"><a href="./authentication/login.html">로그인</a></div>
+      <div class="btn-logout"><a href="./authentication/logout.php">로그아웃</a></div>
+      <div class="greeting"><?=$admin;?> 계정 접속 중</div>
+    </div>
     <!-- 최상단 로그인 영역 end -->
     <!-- gnb 영역 -->
     <div class="gnb-cont">
