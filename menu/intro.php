@@ -52,16 +52,19 @@
       echo '<style type="text/css">
               .btn-login {display:none;}
               .greeting {display:block;}
+              .btn-logout {display:block;}
             </style>';
     } else {
       echo '<style type="text/css">
               .btn-login {display:block;}
               .greeting {display:none;}
+              .btn-logout {display:none;}
             </style>';
     }
   ?>
   <div class="user-cont">
     <div class="btn-login"><a href="../authentication/login.html">로그인</a></div>
+    <div class="btn-logout"><a href="../authentication/logout.php">로그아웃</a></div>
     <div class="greeting"><?=$admin;?> 계정 접속 중</div>
   </div>
   <!-- 최상단 로그인 영역 end -->
