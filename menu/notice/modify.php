@@ -70,7 +70,7 @@
       $(function(){
         $("#register-btn").click(function(){
           var summernoteContent = $('#summernote').summernote('code');
-          alert(summernoteContent);
+//          alert(summernoteContent);
         });
       });
 
@@ -114,7 +114,7 @@
   <h3>공지사항 등록</h3>
   <button class="btn contact-btn" id="btn-tolist" style="float:left;margin-left:10%">&lt; 목록으로</button>
   <div class="form-area">
-    <form method="POST" enctype="multipart/form-data" action="register-check.php">
+    <form method="POST" enctype="multipart/form-data" action="modify-check.php">
       <input type="hidden" name="imgUrl" id="imgUrl" value="">
       <input type="hidden" name="attachFile" id="attachFile" value="">
       <div class="form-area">
