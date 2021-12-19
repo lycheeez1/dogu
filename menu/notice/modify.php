@@ -14,25 +14,12 @@
 
 
   $index = $_GET['nid'];
-
   $sql = "SELECT * FROM notice WHERE NID='$index'";
   $res = mysqli_query($conn, $sql);
   $notice = mysqli_fetch_assoc($res);
   $title = $notice['NTITLE'];
   $body = $notice['NBODY'];
-?>
-
-<?php
-  error_reporting(E_ALL);
-  ini_set("display_errors", 0);
-  session_start();
-
-  if(!isset($_SESSION['ADMIN'])) {
-    echo("<script>
-            alert('글 작성 권한이 없습니다.');
-            location.href='../noticeList.php';
-          </script>");
-  }
+  $file = $notice['NFILE'];
 ?>
 
 <!DOCTYPE html>
@@ -121,10 +108,22 @@
         <div>
           <input type="text" class="form-control" name="title" value="<?=$title;?>" required>
           <textarea id="summernote" name="body" required><?=$body;?></textarea>
-          <input type="file" value="1" name="attached_file" />
+          <input type="file" name="attached_file[]" multiple='multiple'>
+          <?php
+            $dir = '../../upload/'.$index;
+            $scan_dir = scandir($dir);
+            $cnt = count($scan_dir);
+            for ($i = 2; $i < $cnt; $i++) {
+              $attfile_name = $scan_dir[$i];
+              ?>
+              <span><?=$attfile_name?></span>
+          <?php
+            }
+          ?>
         </div>
       </div>
-      <input type="hidden" name="idx" value="<?=$index;?>">
+      <input type="hidden" name="scanned" value="<?=$scan_dir?>">
+      <input type="hidden" name="idx" value="<?=$index?>">
       <button type="submit" class="btn contact-btn" id="register-btn">등록</button>
     </form>
   </div>

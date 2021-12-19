@@ -46,22 +46,13 @@
   <script type="text/javascript" src="../../js/scroll.js"></script>
   <script type="text/javascript" src="../../js/click.js"></script>
   <script type="text/javascript">
-    $(function(){
-      $(".read_check").click(function(){
-        var action_url = $(this).attr("data-action");
-        $(location).attr("href", action_url);
-      });
-    });
-
-    $(function(){
-      $(".btn-del").click(function(){
-        if (!confirm('공지를 삭제하시겠습니까?')) {
-          return false;
-        } else {
-          location.href='./delete.php?nid=<?=$index?>';
-        }
-      });
-    });
+    function deleteNotice() {
+      if (!confirm('공지를 삭제하시겠습니까?')) {
+        return false;
+      } else {
+        location.href='./delete.php?nid=<?=$index?>';
+      }
+    }
   </script>
   <style type="text/css">
     body {
@@ -83,6 +74,10 @@
       border-image-slice: 1;
       font-family: 'NanumSquareRound';
     }
+    .notice-body td img {
+      width: 10%;
+      background-color: black;
+    }
     td {
       max-width: 75px;
       padding: 5%;
@@ -91,8 +86,8 @@
     #attached-tr>td {
       display: block;
       float: right;
-      margin:10px 0;
-      padding: 2%;
+      margin:0;
+      padding: 0 2%;
       max-width: none;
       font-size: 12px;
     }
@@ -273,7 +268,7 @@
         ?>
         <div class="btn-cont">
           <button class="btn-mod" onclick="location.href='./modify.php?nid=<?=$index?>'">수정</button>
-          <button class="btn-del" onclick="">삭제</button>
+          <button class="btn-del" onclick="deleteNotice();">삭제</button>
         </div>
         <!-- 글 수정/삭제 버튼 end -->
         <!-- 공지 내용 영역 -->
@@ -292,7 +287,20 @@
             <td></td>
           <tr>
           <tr id="attached-tr">
-            <td colspan="5">[첨부파일]&nbsp<a href="../../upload/<?=$notice['NFILE'];?>" download><?=$notice['NFILE']?></a></td>
+            <td colspan="5">
+            <?php
+              $dir = '../../upload/'.$index;
+              $scan_dir = scandir($dir);
+              $cnt = count($scan_dir);
+
+              for ($i = 2; $i < $cnt; $i++) {
+                $attfile_name = $scan_dir[$i];
+                ?>
+              [첨부파일] <a href="../../upload/<?=$index?>/<?=$attfile_name?>" download><?=$attfile_name?></a>
+            <?php
+              }
+            ?>
+            </td>
           </tr>
           <tr class="notice-body">
             <td colspan="5"><?=$notice['NBODY']?></td>
@@ -315,7 +323,7 @@
       <!-- popup header -->
       <div class="popup-header">
         <div class="popup-title">
-          <img src="dogu.jpg" alt="(로고 이미지)" style="margin: 0px;">
+          <img src="../../img/dogu2.png" alt="(로고 이미지)" style="margin: 0px;">
           <span>전체 메뉴</span>
         </div>
         <div class="popup-exit"><a href=""> X </a></div>

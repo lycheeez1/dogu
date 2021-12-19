@@ -26,37 +26,83 @@
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
   <script>
     $(document).ready(function() {
+      $("#btn-tolist").click(function(){
+        location.href='../noticeList.php';
+      });
       $('#summernote').summernote({
         lang: 'ko-KR',
         height: 300,
         minHeight: null,
         maxHeight:null,
-        /*
         toolbar: [
-          // [groupName, [list of button]]
           ['style', ['bold', 'italic', 'underline', 'clear']],
           ['font', ['strikethrough', 'superscript', 'subscript']],
           ['fontsize', ['fontsize']],
           ['color', ['color']],
           ['para', ['ul', 'ol', 'paragraph']],
           ['height', ['height']],
-          ['insert', ['picture', 'link', 'video']]
-        ]*/
-      });
-
-      $(function(){
-        $("#register-btn").click(function(){
-          var summernoteContent = $('#summernote').summernote('code');
-//          alert(summernoteContent);
-        });
-      });
-
-      $("#btn-tolist").click(function(){
-        location.href='../noticeList.php';
+          ['insert', ['picture', 'link']]
+        ]
+        ,
+        callbacks: {	//여기 부분이 이미지를 첨부하는 부분
+          onImageUpload:function(files, editor, welEditable) {
+            for(var i = files.length - 1; i >= 0; i--) {
+              uploadImage(files[i], this);
+            }
+          }
+        }
       });
     });
 
-
+  	// 이미지 파일 업로드
+  	function uploadImage(file, editor, welEditable) {
+  		var formData = new FormData();
+  		formData.append("summerfile", file);
+  		$.ajax({
+  			data : formData,
+  			type : "POST",
+        url : "./saveImage.php",
+        cache : false,
+  			contentType : false,
+  			processData : false,
+  			success: function(url) {
+  				$(editor).summernote('editor.insertImage', $.trim(url));
+          alert(url);
+  			},
+        error: function(data) {
+          alert("fail");
+        }
+  		});
+/*
+      function uploadImage(files, editor, welEditable) {
+    		var formData = new FormData();
+        var len = files.length;
+        $.each(files, function(idx, val){
+          formData.append("summerfile[]", val);
+          alert("success");
+        });
+    		$.ajax({
+    			data : formData,
+    			type : "POST",
+          url : "./saveImage.php",
+          cache : false,
+    			contentType : false,
+    			processData : false,
+    			success: function(data) {
+            alert("ajax");
+            $.each(data.url, function(idx, url){
+              alert("ajax success");
+              editor.summernote('editor.insertImage', $.trim(url));
+              alert("ajax success");
+              alert($.trim(url));
+            });
+          },
+          error: function(data, errorThrown) {
+            alert("fail " + errorThrown);
+          }
+    		});
+*/
+  	}
   </script>
   <style type="text/css">
     @font-face {
@@ -98,7 +144,7 @@
         <div>
           <input type="text" class="form-control" placeholder="제목" name="title" required>
           <textarea id="summernote" name="body" required></textarea>
-          <input type="file" value="1" name="attached_file" />
+          <input type="file" name="attached_file[]" multiple='multiple'>
         </div>
     </div>
     <button type="submit" class="btn contact-btn" id="register-btn">등록</button>
