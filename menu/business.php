@@ -18,7 +18,7 @@
   <meta property="og:image" content="../img/rsz_dogu1.png">
   <meta name="twitter:image" content="../img/rsz_dogu1.png">
   <link rel="shortcut icon" type="image/x-icon" href="../img/dogu2.png">
-  <title> 사단법인 도구(Dogu)</title>
+  <title>사업안내 | 사단법인 도구(Dogu)</title>
   <link rel="stylesheet" type="text/css" href="../css/common.css">
   <link rel="stylesheet" type="text/css" href="../css/common-menu.css">
   <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
