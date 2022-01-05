@@ -20,7 +20,6 @@
   <meta name="description" content="아이가 아이답게 자랄 수 있는 세상을 만듭니다" />
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="사단법인 도구(Dogu)">
   <meta property="og:url" content="http://dogu.or.kr">
@@ -30,8 +29,7 @@
   <meta property="og:description" content="아이가 아이답게 자랄 수 있는 세상을 만듭니다" />
   <link rel="canonical" href="http://dogu.or.kr">
   <link rel="shortcut icon" type="image/x-icon" href="img/dogu2.png">
-
-  <title>도구(Dogu) | 사단법인 도구(Dogu)</title>
+  <title>사단법인 도구(Dogu)</title>
   <link rel="stylesheet" type="text/css" href="css/common.css">
   <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -42,8 +40,7 @@
       $("body").smoothWheel()
     });
   </script>
-  <!--
-  <script type="text/javascript" src="js/scroll.js"></script> -->
+  <script type="text/javascript" src="js/scroll.js"></script>
   <script type="text/javascript" src="js/click.js"></script>
 </head>
 <body>
@@ -66,7 +63,16 @@
               </style>';
       }
     ?>
+<div class="header">
+  <div class="progress-cont">
+    <div class="progress-bar" id="progress-bar-id"></div>
+  </div>
     <div class="user-cont">
+      <div class="gnb-logo" id="gnb-logo-mobile">
+        <a href="http://dogu.or.kr" title="dogu">
+          <img src="./img/rsz_dogu1.png" alt="logo">
+        </a>
+      </div>
       <div class="btn-login"><a href="./authentication/login.html">로그인</a></div>
       <div class="btn-logout"><a href="./authentication/logout.php">로그아웃</a></div>
       <div class="greeting"><?=$admin;?> 계정 접속 중</div>
@@ -75,7 +81,7 @@
     <!-- gnb 영역 -->
     <div class="gnb-cont">
       <div class="gnb-logo">
-        <a href="index.php" title="메인으로 이동"> <!--
+        <a href="http://dogu.or.kr" title="메인으로 이동"> <!--
           <img class="logo-mobile" src="img/dogu2.png" style="display:none;"> -->
           <img class="logo-pc" src="img/rsz_dogu1.png" alt="로고">
         </a>
@@ -116,7 +122,8 @@
           </div>
         </a>
       </div>
-  	</div>
+  </div>
+</div>
     <!-- gnb 영역 end-->
 <!--
 </div> -->
@@ -127,7 +134,7 @@
     <!-- popup header -->
     <div class="popup-header">
       <div class="popup-title">
-        <img src="img/dogu2.png" alt="(로고 이미지)" style="margin: 0px;">
+        <img src="img/dogu2.png" alt="" style="margin: 0px;">
         <span>전체 메뉴</span>
       </div>
       <div class="popup-exit"><a href=""> X </a></div>
@@ -180,10 +187,10 @@
         <img src="img/dogu2.png" alt="로고">
       </div>
       <div class="footer-col1-info">
-        <span>TEL 070-8095-3607 &nbsp; | &nbsp; FAX 02-468-0601 &nbsp; <br/>
+        <span>TEL 02-3409-7477  &nbsp; | &nbsp; FAX 02-3409-7478 &nbsp; <br/>
         <span>사단법인 도구 &nbsp; | &nbsp; EMAIL <a href="mailto:nanum@dogu.or.kr">nanum@dogu.or.kr</a></span> <br/>
         <span>서울시 성동구 아차산로7나길 18 에이팩센터 507호</span> <br/>
-        <span>Copyright &copy; 2021 Livewith All rights reserved.</span>
+        <span>Copyright &copy; 2021 Dogu All rights reserved.</span>
       </div>
     </div>
     <div class="footer-col2">

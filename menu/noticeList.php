@@ -20,7 +20,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
   <meta name="description" content="아이가 아이답게 자랄 수 있는 세상을 만듭니다" />
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,15 +31,20 @@
   <meta property="og:image" content="../img/rsz_dogu1.png">
   <meta name="twitter:image" content="../img/rsz_dogu1.png">
   <link rel="shortcut icon" type="image/x-icon" href="../img/dogu2.png">
-
-  <title>도구(Dogu) | 사단법인 도구(Dogu)</title>
+  <title>사단법인 도구(Dogu)</title>
   <link rel="stylesheet" type="text/css" href="../css/common.css">
   <link rel="stylesheet" type="text/css" href="../css/common-menu.css">
   <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="http://fatlinesofcode.github.io/jquery.smoothwheel/src/jquery.smoothwheel.js"></script>
   <script type="text/javascript" src="../js/scroll.js"></script>
   <script type="text/javascript" src="../js/click.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("body").smoothWheel()
+    });
+  </script>
   <!--
   <script type="text/javascript">
     $(document).ready(function(){
@@ -74,13 +79,17 @@
       font-size: 13px;
     }
     button {
-      padding: 5px 10px;
+      padding: 4px 9px;
       font-size:14px;
       border-color: transparent;
       border-radius: 8%
     }
     button:hover {
       cursor:pointer
+    }
+    .btn-write {
+      margin: 1% 10% 0 0;
+      float:right;
     }
     .btn-logout>a {
       display: inline-block;
@@ -117,7 +126,7 @@
       border-bottom: 1px solid;
       border-color: rgba(221, 221, 218, 0.4)
     }
-    #th-num {
+    #th-num, #th-hits {
       max-width: 20px;
     }
     #th-date {
@@ -161,11 +170,30 @@
       .search-cont {
         margin: 10px 0;
       }
+      .search-cont input {
+	width: 90px;
+	font-size: 11.5px;
+	line-height: 18px;
+      }
+      button {
+	font-size:12px;
+	padding: 3px 8px;
+      }
+      .btn-write {
+        margin: 1% 0 0 0;
+      }
       .notice_board {
         width: 100%;
+	font-size:12px;
       }
       .page-cont {
         margin-right: 0;
+      }
+      .board-item, .board-title {
+	font-size:11px;
+      }
+      #th-hits, #td-hits {
+        display:none;
       }
     }
   </style>
@@ -188,16 +216,25 @@
             </style>';
     }
   ?>
+<div class="header"> <!--
+  <div class="progress-cont">
+    <div class="progress-bar" id="progress-bar-id"></div>
+  </div>-->
   <div class="user-cont">
+    <div class="gnb-logo" id="gnb-logo-mobile">
+      <a href="http://dogu.or.kr" title="dogu">
+        <img src="../img/rsz_dogu1.png" alt="logo">
+      </a>
+    </div>
     <div class="btn-login"><a href="../authentication/login.html">로그인</a></div>
     <div class="btn-logout"><a href="../authentication/logout.php">로그아웃</a></div>
-    <div class="greeting"><?=$admin;?> 계정 접속 중</div>
+    <div class="greeting"><?=$admin;?> 접속</div>
   </div>
   <!-- 최상단 로그인 영역 end -->
   <!-- gnb 영역 -->
   <div class="gnb-cont">
     <div class="gnb-logo">
-      <a href="../index.php" title="메인으로 이동">
+      <a href="http://dogu.or.kr" title="메인으로 이동">
         <img src="../img/rsz_dogu1.png" alt="로고">
       </a>
     </div>
@@ -226,7 +263,7 @@
   		</ul>
     </div>
     <div class="gnb-btn-box">
-      <a href="#" title="전체 메뉴 보기">
+      <a href="#whole-menu" title="전체 메뉴 보기">
         <div class="gnb-btn">
           <div class="gnb-btn-line"></div>
           <div class="gnb-btn-line"></div>
@@ -234,7 +271,8 @@
         </div>
       </a>
     </div>
-	</div>
+  </div>
+</div>
 
   <div class="main">
     <div class="sideMenu">
@@ -252,7 +290,7 @@
     </div>
     <div class="main-col2">
       <a id="anc-notice-01"><br></a>
-      <div class="main-col2-row1">
+      <div class="main-col2-row1" style="animation:none">
         <span class="main-chap">공지사항</span> <!--
         <span style="font-size:13px;color:#8C968D;">사단법인 도구에서 공지합니다.</span> <br><br> -->
         <!-- 글쓰기 버튼 -->
@@ -267,14 +305,11 @@
                   </style>';
           }
         ?>
-        <div class="btn-write">
-          <button onclick="location.href='notice/register.php'">글쓰기</button>
-        </div>
         <!-- 글쓰기 버튼 end -->
         <!-- 검색 영역 -->
         <div class="search-cont">
           <input type="text" size=15>
-          <button class="btn-search" onclick="">검색</button>
+          <button class="btn-search">검색</button>
         </div>
         <!-- 검색 영역 end -->
         <!-- 공지 리스트 -->
@@ -284,7 +319,7 @@
               <th id="th-num">번호</th>
               <th id="th-title">제목</th>
               <th id="th-date">등록일</th>
-              <th id="th-num">조회수</th>
+              <th id="th-hits">조회수</th>
             </tr>
           </thead>
           <tbody>
@@ -333,10 +368,10 @@
             <tr>
               <td class="board-item"><?=$row_num;?></td>
               <td class="board-title">
-                <a href="./notice/view.php?nid=<?=$index?>"><?=$title;?></a>
+		<a href="./notice/view.php?nid=<?=$index?>"><?=$title;?></a>
               </td>
               <td class="board-item"><?=$date;?></td>
-              <td class="board-item"><?=$hits;?></td>
+              <td class="board-item" id="td-hits"><?=$hits;?></td>
             </tr>
             <?php
               $row_num--;   // == NID (글삭제 시 번호 갱신을 위해)
@@ -346,6 +381,9 @@
           </tbody>
         </table>
         <!-- 공지 리스트 end -->
+        <div class="btn-write">
+          <button onclick="location.href='notice/register.php'">Write</button>
+        </div>
         <!-- 페이징 영역 -->
         <div class="page-cont">
           <?php
@@ -434,10 +472,10 @@
         <img src="../img/dogu2.png" alt="로고">
       </div>
       <div class="footer-col1-info">
-        <span>TEL 070-8095-3607 &nbsp; | &nbsp; FAX 02-468-0601 &nbsp; <br/>
+        <span>TEL 02-3409-7477 &nbsp; | &nbsp; FAX 02-3409-7478 &nbsp; <br/>
         <span>사단법인 도구 &nbsp; | &nbsp; EMAIL <a href="mailto:nanum@dogu.or.kr">nanum@dogu.or.kr</a></span> <br/>
         <span>서울시 성동구 아차산로7나길 18 에이팩센터 507호</span> <br/>
-        <span>Copyright &copy; 2021 Livewith All rights reserved.</span>
+        <span>Copyright &copy; 2021 Dogu All rights reserved.</span>
       </div>
     </div>
     <div class="footer-col2">

@@ -1,6 +1,6 @@
 <?php
-  $host = "localhost";
-  $user = "root";
+  $host = "db-dogu-secure.cp7xc1lpexpz.ap-northeast-2.rds.amazonaws.com";
+  $user = "dogu";
   $pwd = "lycheeez1";
   $dbName = "dogu";
 

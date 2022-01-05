@@ -52,7 +52,7 @@ body {
 }
 
 ::selection {
-	background-color: rgba(207, 237, 255, 0.5);
+  background-color: rgba(194, 240, 194, 0.5);
 }
 br, .main-col1, .map {
   user-select:none;
@@ -80,7 +80,10 @@ br, .main-col1, .map {
   background-color: lightgray;
   border-radius: 8%
 }
-
+#gnb-logo-mobile {
+  display:none;
+  margin:0 50px;
+}
 /* --------------------- *
  *     gnb container     *
  * --------------------- */
@@ -147,6 +150,7 @@ br, .main-col1, .map {
 } /*
 .gnb-menu-d2 a {
   font-family: 'NanumSquareRound';
+  font-weight: bold;
 } */
 .gnb-menu-d1 > a:hover {
   color: #8C968D;
@@ -324,7 +328,8 @@ br, .main-col1, .map {
   text-align:left;
   font-size: 14px;
   color: #8C968D;
-  font-family: 'NanumSquareRound';
+  font-family: 'NanumSquareRound';/*
+  border-top: 1.5px solid #525252;*/
 }
 .footer-col1 {
   width:80%;
@@ -384,10 +389,9 @@ br, .main-col1, .map {
   padding: 0.5% 0.65%; /* PC 풀스크린 기준 */
   border-radius: 5px;
   background-color: #F9E480;
-  box-shadow: 1px 1px 5px gray;
 }
 .btn-top>a {
-  color: #8C968D;
+  color: #5c5c5c;
   font-family: 'locus_sangsang', 'NanumSquareRound';
 }
 
@@ -521,44 +525,49 @@ br, .main-col1, .map {
 }
 
 @media all and (max-width:559px) {
-  .logo-pc {
-  }
   .user-cont {
     width:88%;
     padding:15px;
   }
+  #gnb-logo-mobile {
+    display:block;
+    margin-bottom:2%;
+  }
+  .user-cont a {
+    font-size:11px
+  }
   .gnb-cont {
-    width: 92%;
+    width: 94%;
     margin: 0 auto;
   }
+  .gnb-logo {
+    display:none;
+  }
   .gnb {
-    width: 70%;
-    margin-left: 2%;
+    width: 94%;
+    margin: 0;
   }
   .gnb-logo {
     width: 23%
   }
-  .gnb-menu-d1 {
-    float: left;
-    width: 33.3%;
+  .gnb-menu-d1 a{
     margin: 0;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 30px;
   }
   .gnb-menu-d1 a{
-     float:left;
   }
   .gnb-menu-d2 {
     display: none;
   }
   .gnb-btn-box {
     width: 4%;
-    margin: 3.4% 0 0 0;
+    margin: 2% 0;
     float:left;
   }
   .footer {
     width: 94%;
-    font-size: 11px;
+    font-size: 9.5px;
   }
   .footer-col1-logo img {
     max-width: 50px;
@@ -584,31 +593,31 @@ br, .main-col1, .map {
   }
   .popup-win {
     width: 92%;
-    height: 50%;
+    height: 45%;
     padding: 0 10px;
   }
   .popup-header {
     width: 100%;
-    font-size: 22px;
+    font-size: 18px;
   }
   .popup-body {
     width: 100%;
-    height:74%
+    height:72%
   }
   /* 팝업 gnb */
   .gnb-pop-d1 {
     width: 24%;
-    font-size: 17px;
-    margin: 6% 4.5%;
+    font-size: 14.5px;
+    margin: 6% 4.5% 0 4.5%;
   }
   .gnb-pop-d2 {
     width: 94%;
-    margin: 20px 0;
+    margin: 10px 0;
     padding:0;
-    line-height: 25px;
-    font-size: 14px;
+    line-height: 28px;
+    font-size: 12px;
   }
   .footer-col2-nts span {
-    font-size: 9px;
+    font-size: 8px;
   }
 }

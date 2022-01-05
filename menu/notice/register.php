@@ -9,6 +9,8 @@
             location.href='../noticeList.php';
           </script>");
   }
+
+  
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +46,7 @@
           ['insert', ['picture', 'link']]
         ]
         ,
-        callbacks: {	//여기 부분이 이미지를 첨부하는 부분
+        callbacks: {
           onImageUpload:function(files, editor, welEditable) {
             for(var i = files.length - 1; i >= 0; i--) {
               uploadImage(files[i], this);
@@ -67,7 +69,7 @@
   			processData : false,
   			success: function(url) {
   				$(editor).summernote('editor.insertImage', $.trim(url));
-          alert(url);
+ //         alert(url);
   			},
         error: function(data) {
           alert("fail");
@@ -134,7 +136,8 @@
   </style>
 </head>
 <body>
-  <h3>공지사항 등록</h3>
+  <br>
+  <h4>공지사항 등록</h4>
   <button class="btn contact-btn" id="btn-tolist" style="float:left;margin-left:10%">&lt; 목록으로</button>
   <div class="form-area">
     <form method="POST" enctype="multipart/form-data" action="register-check.php">
@@ -144,7 +147,7 @@
         <div>
           <input type="text" class="form-control" placeholder="제목" name="title" required>
           <textarea id="summernote" name="body" required></textarea>
-          <input type="file" name="attached_file[]" multiple='multiple'>
+          <input type="file" name="attached_file[]" multiple>
         </div>
     </div>
     <button type="submit" class="btn contact-btn" id="register-btn">등록</button>

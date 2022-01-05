@@ -5,11 +5,10 @@
   include ("../../authentication/dbconn.php");
 
   session_start();
-
+ 
   $index = $_GET['nid'];   // 제목 클릭 시 넘겨받음
-
   $sql = "SELECT * FROM notice WHERE NID='$index'";
-  $cnt_hits = "UPDATE notice SET NHIT=NHIT+1 where NID=$index";
+  $cnt_hits = "UPDATE notice SET NHIT=NHIT+1 where NID='$index'";
   $conn->query($cnt_hits);
   $res = mysqli_query($conn, $sql);
   $notice = mysqli_fetch_assoc($res);
@@ -25,7 +24,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=no">
   <meta name="description" content="아이가 아이답게 자랄 수 있는 세상을 만듭니다" />
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,8 +34,7 @@
   <meta property="og:image" content="../../img/rsz_dogu1.png">
   <meta name="twitter:image" content="../../img/rsz_dogu1.png">
   <link rel="shortcut icon" type="image/x-icon" href="../../img/dogu2.png">
-
-  <title>도구(Dogu) | 사단법인 도구(Dogu)</title>
+  <title>사단법인 도구(Dogu)</title>
   <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../../css/common.css">
   <link rel="stylesheet" type="text/css" href="../../css/common-menu.css"> <!--
@@ -58,14 +56,20 @@
     body {
       font-family: 'NanumSquareRound';
     }
+    .main-col2-row1 {
+      animation:none;
+    }
+    .progress-cont {
+      display:none;
+    }
     #gnb-menu-d1-03 > a {
       color: gray;
       border-color: #7fd87d;
     }
     .notice-article {
-      width: 90%;
-      margin: 20px 0;
-      padding: 20px 0;
+      width: 92%;
+      margin: 2% 0;
+      padding: 2% 0;
       border: 5px;
       border-style: solid;
       border-style: solid hidden;
@@ -73,11 +77,10 @@
       border-image: linear-gradient(to right, #b9e66a, #F9E480, #7FD87D, #F9E480);
       border-image-slice: 1;
       font-family: 'NanumSquareRound';
-    }
+    }/*
     .notice-body td img {
       width: 10%;
-      background-color: black;
-    }
+    }*/
     td {
       max-width: 75px;
       padding: 5%;
@@ -187,10 +190,14 @@
             </style>';
     }
   ?>
+<div class="header">
+  <div class="progress-cont">
+    <div class="progress-bar" id="progress-bar-id"></div>
+  </div>
   <div class="user-cont">
     <div class="btn-login"><a href="../../authentication/login.html">로그인</a></div>
     <div class="btn-logout"><a href="../../authentication/logout.php">로그아웃</a></div>
-    <div class="greeting"><?=$admin;?> 계정 접속 중</div>
+    <div class="greeting"><?=$admin;?> 접속</div>
   </div>
   <!-- 최상단 로그인 영역 end -->
   <!-- gnb 영역 -->
@@ -205,18 +212,18 @@
         <li class="gnb-menu-d1">
           <a href="../intro.php">도구(Dogu)</a>
           <ul class="gnb-menu-d2" id="gnb-menu-d2-dogu">
-            <li><a href="menu/intro.php">인사말</a></li>
-            <li><a href="menu/intro.php">연혁</a></li>
-            <li><a href="menu/intro.php">함께하는 사람들</a></li>
-            <li><a href="menu/intro.php">오시는 길</a></li>
+            <li><a href="../intro.php">인사말</a></li>
+            <li><a href="../intro.php">연혁</a></li>
+            <li><a href="../intro.php">함께하는 사람들</a></li>
+            <li><a href="../intro.php">오시는 길</a></li>
           </ul>
         </li>
   			<li class="gnb-menu-d1">
           <a href="../business.php">사업안내</a>
           <ul class="gnb-menu-d2" id="gnb-menu-d2-biz">
-            <li><a href="menu/business.php">교육</a></li>
-            <li><a href="menu/business.php">문화예술</a></li>
-            <li><a href="menu/business.php">심리정서</a></li>
+            <li><a href="../business.php">교육</a></li>
+            <li><a href="../business.php">문화예술</a></li>
+            <li><a href="../business.php">심리정서</a></li>
           </ul>
         </li>
   			<li class="gnb-menu-d1" id="gnb-menu-d1-03">
@@ -233,8 +240,8 @@
         </div>
       </a>
     </div>
-	</div>
-
+  </div>
+</div>
   <div class="main">
     <div class="sideMenu">
       <ul>
@@ -289,16 +296,20 @@
           <tr id="attached-tr">
             <td colspan="5">
             <?php
+              
               $dir = '../../upload/'.$index;
-              $scan_dir = scandir($dir);
-              $cnt = count($scan_dir);
+    	      if (is_dir($dir)) {
+                 $scan_dir = scandir($dir);
+                 $cnt = count($scan_dir);
 
-              for ($i = 2; $i < $cnt; $i++) {
-                $attfile_name = $scan_dir[$i];
+                 for ($i = 2; $i < $cnt; $i++) {
+                    $attfile_name = $scan_dir[$i];
+		    $attfilename = iconv("UTF-8", "EUC-KR", $attfile_name);
                 ?>
               [첨부파일] <a href="../../upload/<?=$index?>/<?=$attfile_name?>" download><?=$attfile_name?></a>
             <?php
-              }
+                 }
+	      }	 
             ?>
             </td>
           </tr>
@@ -372,10 +383,10 @@
         <img src="../../img/dogu2.png" alt="로고">
       </div>
       <div class="footer-col1-info">
-        <span>TEL 070-8095-3607 &nbsp; | &nbsp; FAX 02-468-0601 &nbsp; <br/>
+        <span>TEL 02-3409-7477 &nbsp; | &nbsp; FAX 02-3409-7478 &nbsp; <br/>
         <span>사단법인 도구 &nbsp; | &nbsp; EMAIL <a href="mailto:nanum@dogu.or.kr">nanum@dogu.or.kr</a></span> <br/>
         <span>서울시 성동구 아차산로7나길 18 에이팩센터 507호</span> <br/>
-        <span>Copyright &copy; 2021 Livewith All rights reserved.</span>
+        <span>Copyright &copy; 2021 Dogu All rights reserved.</span>
       </div>
     </div>
     <div class="footer-col2">

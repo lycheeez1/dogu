@@ -1,6 +1,8 @@
 <?php
   error_reporting(E_ALL);
   ini_set("display_errors", 0);
+  header("Content-Type:text/html; charset=UTF-8");
+
   session_start();
 
   if(!isset($_SESSION['ADMIN'])) {
@@ -50,23 +52,24 @@
           ['color', ['color']],
           ['para', ['ul', 'ol', 'paragraph']],
           ['height', ['height']],
-          ['insert', ['picture', 'link', 'video']]
+          ['insert', ['picture', 'link']]
         ]
-      });
-
-      $(function(){
-        $("#register-btn").click(function(){
-          var summernoteContent = $('#summernote').summernote('code');
-//          alert(summernoteContent);
-        });
       });
 
       $("#btn-tolist").click(function(){
         location.href='../noticeList.php';
       });
+
+      $(".del-check").click(function(){
+//	if ($(".del-check").attr("checked")){
+//	  alert("check success");
+ //         $(".del-span").css("text-decoration":"line-through");
+//	}
+      });
     });
 
-
+ //   function is_checked(
+    
   </script>
   <style type="text/css">
     @font-face {
@@ -80,12 +83,12 @@
       font-family: 'NanumSquareRound';
     }
     .form-area {
-      margin: 5%;
+      margin: 5% 5% 0 5%;
     }
     #register-btn {
       width: 100px;
-      margin-top: 10px;
-      padding: 10px;
+      margin:0;
+      padding: 8px 10px;
       font-size: 12pt;
     }
     #register-btn:hover {
@@ -95,37 +98,46 @@
     input[type=file]:hover {
       cursor:pointer
     }
+    .file-cont {
+      margin:0 5% 5% 5%;
+      text-align:left;
+      color: #525252;
+    }
   </style>
 </head>
 <body>
-  <h3>공지사항 등록</h3>
+  <h4>공지사항 등록</h4>
   <button class="btn contact-btn" id="btn-tolist" style="float:left;margin-left:10%">&lt; 목록으로</button>
   <div class="form-area">
-    <form method="POST" enctype="multipart/form-data" action="modify-check.php">
-      <input type="hidden" name="imgUrl" id="imgUrl" value="">
-      <input type="hidden" name="attachFile" id="attachFile" value="">
+    <form name="form1" method="POST" enctype="multipart/form-data" action="modify-check.php">
       <div class="form-area">
         <div>
+          <input type="hidden" name="idx" value="<?=$_GET['nid']?>"/>
           <input type="text" class="form-control" name="title" value="<?=$title;?>" required>
           <textarea id="summernote" name="body" required><?=$body;?></textarea>
-          <input type="file" name="attached_file[]" multiple='multiple'>
-          <?php
-            $dir = '../../upload/'.$index;
-            $scan_dir = scandir($dir);
-            $cnt = count($scan_dir);
-            for ($i = 2; $i < $cnt; $i++) {
-              $attfile_name = $scan_dir[$i];
-              ?>
-              <span><?=$attfile_name?></span>
-          <?php
-            }
-          ?>
+          <input type="file" name="attached_file[]" multiple>
         </div>
+	<button type="submit" class="btn contact-btn" id="register-btn">submit</button>
       </div>
-      <input type="hidden" name="scanned" value="<?=$scan_dir?>">
-      <input type="hidden" name="idx" value="<?=$index?>">
-      <button type="submit" class="btn contact-btn" id="register-btn">등록</button>
+      <div class="file-cont"> <!--
+        <p>* The [Remove file] function is not optimized yet. *</p> -->
+          <?php
+  	    $dir = '../../upload/'.$index;
+  	    if (is_dir($dir)) {
+               $scan_dir = scandir($dir);
+               $cnt = count($scan_dir);
+               for ($i = 2; $i < $cnt; $i++) {
+                  $attfile_name = $scan_dir[$i];
+          ?> 
+	<input type="checkbox" class="del-check" name="del-check[]" value="<?=$attfile_name?>"/>
+        <span class="del-span"><?=$attfile_name?></span> <br>
+	  <?php
+		  }
+               } 
+          ?>
+      </div>
     </form>
-  </div>
+   </div>
+   <!-- end of file-cont --> 
 </body>
 </html>

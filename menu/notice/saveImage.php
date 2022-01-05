@@ -19,10 +19,21 @@
   // 서버에 파일 업로드
   if (isset($_FILES['summerfile']['name'])) {
     if (!$_FILES['summerfile']['error']) {
-      $sql = "SELECT * FROM notice ORDER BY NID DESC LIMIT 1";
-      $res = mysqli_query($conn, $sql);
-      $notice = mysqli_fetch_assoc($res);
-      $index = $notice['NID'] + 1;
+      // Register
+      if (!isset($_GET['nid'])) {
+        $sql = "SELECT * FROM notice ORDER BY NID DESC LIMIT 1";
+        $res = mysqli_query($conn, $sql);
+        $notice = mysqli_fetch_assoc($res);
+        if (!isset($notice['NID'])) {
+	    $index = 1;
+        } else {
+	    $index = $notice['NID'] + 1;
+        }
+      }
+      // Modify
+      else {
+        $index = $_GET['nid'];
+      }
 
       $target_dir = '../../uploadImg/'.$index.'/';
       // upload 하위 폴더(공지) 생성
@@ -34,9 +45,9 @@
       chdir('./menu/notice/');
 
       $tmp_file =  $_FILES['summerfile']['tmp_name'];
-      $name = $_FILES['summerfile']['name'];
+      $ori_name = $_FILES['summerfile']['name'];
       $filename = iconv("UTF-8", "EUC-KR", $_FILES['summerfile']['name']);
-      $file_dir = $target_dir.$filename;
+      $file_dir = $target_dir.$ori_name;
       move_uploaded_file($tmp_file, $file_dir);
 
       echo $file_dir;
