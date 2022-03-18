@@ -196,6 +196,31 @@
           사단법인 도구 대표 정현아
         </span>
       </div>
+      
+      <!--
+      <a id="anc-dogu-02"><br></a>
+      <div class="main-col2-row2">
+        <span class="main-chap">미션과 비전</span>
+        <span>
+          <b>미션</b>
+           - 모든 아동이 나다움을 온전히 누리고, 더불어 살아가는 건강한 사회를 만듭니다. <br><br>
+          
+          <b>비전</b>
+           - 삶 통합 멘토링 지원을 통해 원하는 것을 마음껏 누리며, 
+             나다움-너다움-우리다움을 알아가는 세상을 꿈꿉니다. <br><br>
+          
+          <b>핵심가치</b>
+           - 전문성
+              삶 통합 멘토링의 특화되고 체계적인 서비스와 질적 향상을 위해 끊임없이 노력합니다. <br>
+           - 인정
+              아동을 삶의 주체로 인정하고, 아동 관점에서 주체적 참여 방식을 생각합니다. <br>
+           - 연대
+              유관 기관과 유연하고, 새로운 방식으로 연대하여 혁신적인 변화를 이끌어냅니다. <br>
+           - 존중
+              현장 전문가의 전문성을 존중하며, 다양한 방법으로 전문성을 지지합니다. <br><br>
+        </span>
+      </div>
+      -->
 
       <a id="anc-dogu-02"><br></a>
       <div class="main-col2-row2">
@@ -227,14 +252,14 @@
           <div class="hide">
             <div>
               <a href="https://map.kakao.com/?urlX=512762&urlY=1124549&urlLevel=3&map_type=TYPE_MAP&map_hybrid=false" target="_blank">
-                서울특별시 성동구 성수동2가 289-5 507호
+                서울특별시 성동구 성수동2가 289-5 908호
               </a>
             </div>
           </div> -->
         </div>
         <div class="map-descrption">
           <span>
-          - 주소: 서울시 성동구 아차산로7나길 18. 5층 507호 <br>
+          - 주소: 서울시 성동구 아차산로7나길 18. 908호 <br>
           - 전화: 02-3409-7477 <br>
           - 팩스: 02-3409-7478 <br>
           - 이메일: <a href="mailto:nanum@dogu.or.kr">nanum@dogu.or.kr</a> <br><br>
@@ -259,7 +284,7 @@
       <div class="footer-col1-info">
         <span>TEL 02-3409-7477 &nbsp; | &nbsp; FAX 02-3409-7478 &nbsp; <br/>
         <span>사단법인 도구 &nbsp; | &nbsp; EMAIL <a href="mailto:nanum@dogu.or.kr">nanum@dogu.or.kr</a></span> <br/>
-        <span>서울시 성동구 아차산로7나길 18 에이팩센터 507호</span> <br/>
+        <span>서울시 성동구 아차산로7나길 18 에이팩센터 908호</span> <br/>
         <span>Copyright &copy; 2021 Dogu All rights reserved.</span>
       </div>
     </div>
@@ -272,7 +297,6 @@
       </div>
     </div>
   </div>
-
 </body>
 
 </html>
