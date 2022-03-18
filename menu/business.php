@@ -131,14 +131,27 @@
       <a id="anc-business-01"><br></a>
       <div class="main-col2-row1">
         <span class="main-chap">교육</span>
-        <span> KB국민은행- 『KB라스쿨』 </span> <br>
+        <span> KB라스쿨(La School) </span> <br>
         <img src="https://modo-phinf.pstatic.net/20210826_37/1629944985313cXfhx_PNG/mosaet84Jh.png" alt="KB라스쿨"> <br>
         <span>
-          KB국민은행에서 후원하는 전국 온라인 교육 플랫폼 KB라스쿨! <br>
-          실시간 온라인 강의와 1:1 멘토링, 추가 학습 지원 등 포괄적인 교육을 제공합니다. <br>
-          KB라스쿨은 아이들이 '스스로, 즐겁게' 공부하는 플랫폼을 지향하며 비대면 자습실, 자체 Ladio 등, 다양한 컨텐츠를 개발하여 자연스러운 학습을 유도합니다. <br><br>
-
-          KB라스쿨은 전국 모든 아이들의 빛나는 첫걸음을 응원합니다! <br>
+	  온라인 교육 플랫폼으로 스타 강사의 실시간 온라인 강의, 1:1 맞춤 멘토링, 자기주도학습 역량 강화 프로그램 지원을 통해 <br>
+	  균등한 교육 기회와 학습 능력 향상의 기회를 제공<br><br>
+        </span>
+      </div>
+      <div class="main-col2-row1">
+        <span> KB국민은행 IT아카데미 IT’s Your Life </span> <br>
+        <img src="https://modo-phinf.pstatic.net/20210826_37/1629944985313cXfhx_PNG/mosaet84Jh.png" alt="KB라스쿨"> <br>
+        <span>
+	  양질의 IT 교육 지원을 통한 디지털 역량 강화로 디지털 금융 개발자 양성, 진로 체험 기회 제공<br>
+	  취업 역량 강화를 통한 취업 문제 해결 도움, 건강한 사회 구성원으로 성장 도움<br><br>
+        </span>
+      </div>
+      <div class="main-col2-row1">
+        <span> 두드림(Do Dream) </span> <br>
+        <img src="https://modo-phinf.pstatic.net/20210826_37/1629944985313cXfhx_PNG/mosaet84Jh.png" alt="KB라스쿨"> <br>
+        <span>
+	  문화, 예술 분야를 전공하는 청소년 및 청년에게 <br>
+	  전문 강사, 작품 창작 및 활동비 지원을 통해 미래 인재로 성장할 수 있는 기회 제공<br><br>
         </span>
       </div>
 
