@@ -164,6 +164,7 @@
         <li><span>도구(Dogu)</span>
           <ul>
             <li><a href="#anc-dogu-01">인사말</a></li>
+            <li><a href="#anc-dogu-05">미션과 비전</a></li>
             <li><a href="#anc-dogu-02">연혁</a></li>
             <li><a href="#anc-dogu-03">함께하는 사람들</a></li>
             <li><a href="#anc-dogu-04">오시는 길</a></li>
@@ -196,31 +197,44 @@
           사단법인 도구 대표 정현아
         </span>
       </div>
-      
-      <!--
-      <a id="anc-dogu-02"><br></a>
-      <div class="main-col2-row2">
+
+      <a id="anc-dogu-05"><br></a>
+      <div class="main-col2-row5">
         <span class="main-chap">미션과 비전</span>
-        <span>
-          <b>미션</b>
-           - 모든 아동이 나다움을 온전히 누리고, 더불어 살아가는 건강한 사회를 만듭니다. <br><br>
-          
-          <b>비전</b>
-           - 삶 통합 멘토링 지원을 통해 원하는 것을 마음껏 누리며, 
-             나다움-너다움-우리다움을 알아가는 세상을 꿈꿉니다. <br><br>
-          
-          <b>핵심가치</b>
-           - 전문성
-              삶 통합 멘토링의 특화되고 체계적인 서비스와 질적 향상을 위해 끊임없이 노력합니다. <br>
-           - 인정
-              아동을 삶의 주체로 인정하고, 아동 관점에서 주체적 참여 방식을 생각합니다. <br>
-           - 연대
-              유관 기관과 유연하고, 새로운 방식으로 연대하여 혁신적인 변화를 이끌어냅니다. <br>
-           - 존중
-              현장 전문가의 전문성을 존중하며, 다양한 방법으로 전문성을 지지합니다. <br><br>
-        </span>
+        <div class="main-col2-row5-01">
+          <span class="main-subchap">미션</span>
+          <span>모든 아동이 나다움을 온전히 누리고, 더불어 살아가는 건강한 사회를 만듭니다.</span>
+        </div>
+        <!-- <hr class="hr-main"> -->
+        <div class="main-col2-row5-02">
+          <span class="main-subchap">비전</span>
+            <span>삶 통합 멘토링 지원을 통해 원하는 것을 마음껏 누리며, 나다움·너다움·우리다움을 알아가는 세상을 꿈꿉니다.<span>
+        </div>
+        <br>
+        <div class="main-col2-row5-03">
+          <span class="main-subchap">핵심가치</span>
+          <div class="main-corevalue">
+            <span class="corevalue"> 전문성 </span>
+              <span>삶 통합 멘토링의 특화되고 체계적인 서비스와 <br>
+                질적 향상을 위해 끊임없이 노력합니다.</span>
+          </div>
+          <div class="main-corevalue">
+            <span class="corevalue"> 안정 </span>
+            <span>아동을 삶의 주체로 인정하고, <br>
+              아동 관점에서 주체적 참여 방식을 생각합니다. <span>
+          </div>
+          <div class="main-corevalue">
+            <span class="corevalue"> 연대 </span>
+             <span>유관 기관과 유연하고, 새로운 방식으로 연대하여 <br>
+               혁신적인 변화를 이끌어냅니다.</span>
+          </div>
+          <div class="main-corevalue">
+            <span class="corevalue"> 존중 </span>
+            <span>현장 전문가의 전문성을 존중하며, <br>
+              다양한 방법으로 전문성을 지지합니다. </span>
+          </div>
+        </div>
       </div>
-      -->
 
       <a id="anc-dogu-02"><br></a>
       <div class="main-col2-row2">
@@ -231,7 +245,7 @@
       <a id="anc-dogu-03"><br></a>
       <div class="main-col2-row3">
         <span class="main-chap">함께하는 사람들</span>
-        <img src="../img/dogu_org.png" alt="함께하는_사람들_조직도">
+        <img src="../img/dogu_org.png" alt="함께하는_사람들_조직도"><br><br>
         <img src="../img/dogu_with.png" alt="함께하는_사람들_이사회">
       </div>
 
@@ -297,6 +311,7 @@
       </div>
     </div>
   </div>
+
 </body>
 
 </html>

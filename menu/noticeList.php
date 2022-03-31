@@ -244,6 +244,7 @@
           <a href="intro.php">도구(Dogu)</a>
           <ul class="gnb-menu-d2" id="gnb-menu-d2-dogu">
             <li><a href="intro.php">인사말</a></li>
+            <li><a href="intro.php#anc-dogu-05">미션과 비전</a></li>
             <li><a href="intro.php#anc-dogu-02">연혁</a></li>
             <li><a href="intro.php#anc-dogu-03">함께하는 사람들</a></li>
             <li><a href="intro.php#anc-dogu-04">오시는 길</a></li>

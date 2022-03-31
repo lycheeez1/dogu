@@ -5,7 +5,7 @@
   include ("../../authentication/dbconn.php");
 
   session_start();
- 
+
   $index = $_GET['nid'];   // 제목 클릭 시 넘겨받음
   $sql = "SELECT * FROM notice WHERE NID='$index'";
   $cnt_hits = "UPDATE notice SET NHIT=NHIT+1 where NID='$index'";
@@ -213,17 +213,18 @@
           <a href="../intro.php">도구(Dogu)</a>
           <ul class="gnb-menu-d2" id="gnb-menu-d2-dogu">
             <li><a href="../intro.php">인사말</a></li>
-            <li><a href="../intro.php">연혁</a></li>
-            <li><a href="../intro.php">함께하는 사람들</a></li>
-            <li><a href="../intro.php">오시는 길</a></li>
+            <li><a href="../intro.php#anc-dogu-05">미션과 비전</a></li>
+            <li><a href="../intro.php#anc-dogu-02">연혁</a></li>
+            <li><a href="../intro.php#anc-dogu-03">함께하는 사람들</a></li>
+            <li><a href="../intro.php#anc-dogu-04">오시는 길</a></li>
           </ul>
         </li>
   			<li class="gnb-menu-d1">
           <a href="../business.php">사업안내</a>
           <ul class="gnb-menu-d2" id="gnb-menu-d2-biz">
             <li><a href="../business.php">교육</a></li>
-            <li><a href="../business.php">문화예술</a></li>
-            <li><a href="../business.php">심리정서</a></li>
+            <li><a href="../business.php#anc-business-02">문화예술</a></li>
+            <li><a href="../business.php#anc-business-03">심리정서</a></li>
           </ul>
         </li>
   			<li class="gnb-menu-d1" id="gnb-menu-d1-03">
@@ -296,7 +297,7 @@
           <tr id="attached-tr">
             <td colspan="5">
             <?php
-              
+
               $dir = '../../upload/'.$index;
     	      if (is_dir($dir)) {
                  $scan_dir = scandir($dir);
@@ -309,7 +310,7 @@
               [첨부파일] <a href="../../upload/<?=$index?>/<?=$attfile_name?>" download><?=$attfile_name?></a>
             <?php
                  }
-	      }	 
+	      }
             ?>
             </td>
           </tr>
@@ -385,7 +386,7 @@
       <div class="footer-col1-info">
         <span>TEL 02-3409-7477 &nbsp; | &nbsp; FAX 02-3409-7478 &nbsp; <br/>
         <span>사단법인 도구 &nbsp; | &nbsp; EMAIL <a href="mailto:nanum@dogu.or.kr">nanum@dogu.or.kr</a></span> <br/>
-        <span>서울시 성동구 아차산로7나길 18 에이팩센터 507호</span> <br/>
+        <span>서울시 성동구 아차산로7나길 18 에이팩센터 908호</span> <br/>
         <span>Copyright &copy; 2021 Dogu All rights reserved.</span>
       </div>
     </div>

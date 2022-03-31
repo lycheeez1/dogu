@@ -92,6 +92,7 @@
             <a href="menu/intro.php">도구(Dogu)</a>
             <ul class="gnb-menu-d2 01" id="gnb-menu-d2-dogu">
               <li><a href="menu/intro.php">인사말</a></li>
+              <li><a href="menu/intro.php#anc-dogu-05">미션과 비전</a></li>
               <li><a href="menu/intro.php#anc-dogu-02">연혁</a></li>
               <li><a href="menu/intro.php#anc-dogu-03">함께하는 사람들</a></li>
               <li><a href="menu/intro.php#anc-dogu-04">오시는 길</a></li>
@@ -189,7 +190,7 @@
       <div class="footer-col1-info">
         <span>TEL 02-3409-7477  &nbsp; | &nbsp; FAX 02-3409-7478 &nbsp; <br/>
         <span>사단법인 도구 &nbsp; | &nbsp; EMAIL <a href="mailto:nanum@dogu.or.kr">nanum@dogu.or.kr</a></span> <br/>
-        <span>서울시 성동구 아차산로7나길 18 에이팩센터 507호</span> <br/>
+        <span>서울시 성동구 아차산로7나길 18 에이팩센터 908호</span> <br/>
         <span>Copyright &copy; 2021 Dogu All rights reserved.</span>
       </div>
     </div>

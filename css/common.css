@@ -162,7 +162,7 @@ br, .main-col1, .map {
   font-size: 16px;
   width: 12%;
   height: 0;
-  line-height: 40px;
+  line-height: 38px;
   overflow: hidden;
 
   -webkit-transition: height .4s;
@@ -185,13 +185,13 @@ br, .main-col1, .map {
   text-align: center;
 }
 .gnb-menu-d1:hover .gnb-menu-d2 {
-  height:165px;
+  height:200px;
 }
 .gnb-menu-d1:hover #gnb-menu-d2-biz {
-  height:124px;
+  height:120px;
 }
 .gnb-menu-d1:hover #gnb-menu-d2-notice {
-  height:40px;
+  height:38px;
 }
 .gnb-menu-d2 a:hover {
   color: #F9E480;
@@ -326,7 +326,7 @@ br, .main-col1, .map {
   width: 70%;
   margin: 0 auto;
   text-align:left;
-  font-size: 14px;
+  font-size: 13px;
   color: #8C968D;
   font-family: 'NanumSquareRound';/*
   border-top: 1.5px solid #525252;*/
