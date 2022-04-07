@@ -174,7 +174,7 @@
     </div>
     <div class="main-col1">&nbsp</div>
     <div class="main-col2">
-      <a id="anc-dogu-01"><br></a>
+      <a id="anc-dogu-01"></a><br>
       <div class="main-col2-row1">
         <span class="main-chap">인사말</span>
         <span>
@@ -198,7 +198,7 @@
         </span>
       </div>
 
-      <a id="anc-dogu-05"><br></a>
+      <a id="anc-dogu-05"></a><br><br>
       <div class="main-col2-row5">
         <span class="main-chap">미션과 비전</span>
         <div class="main-col2-row5-01">
@@ -236,20 +236,20 @@
         </div>
       </div>
 
-      <a id="anc-dogu-02"><br></a>
+      <a id="anc-dogu-02"></a><br><br>
       <div class="main-col2-row2">
         <span class="main-chap">연혁</span>
         <img src="../img/dogu_history.png"  alt="연혁_2021">
       </div>
 
-      <a id="anc-dogu-03"><br></a>
+      <a id="anc-dogu-03"></a><br><br>
       <div class="main-col2-row3">
         <span class="main-chap">함께하는 사람들</span>
         <img src="../img/dogu_org.png" alt="함께하는_사람들_조직도"><br><br>
         <img src="../img/dogu_with.png" alt="함께하는_사람들_이사회">
       </div>
 
-      <a id="anc-dogu-04"><br></a>
+      <a id="anc-dogu-04"></a><br><br>
       <div class="main-col2-row4">
         <span class="main-chap">오시는 길</span> <!--
         <p>구글맵</p>
@@ -273,7 +273,7 @@
         </div>
         <div class="map-descrption">
           <span>
-          - 주소: 서울시 성동구 아차산로7나길 18. 908호 <br>
+          - 주소: 서울시 성동구 아차산로7나길 18 성수 에이팩센터 908호 <br>
           - 전화: 02-3409-7477 <br>
           - 팩스: 02-3409-7478 <br>
           - 이메일: <a href="mailto:nanum@dogu.or.kr">nanum@dogu.or.kr</a> <br><br>

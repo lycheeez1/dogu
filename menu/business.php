@@ -129,7 +129,7 @@
       &nbsp
     </div>
     <div class="main-col2">
-      <a id="anc-business-01"><br></a>
+      <a id="anc-business-01"></a><br>
       <div class="main-col2-row1">
         <span class="main-chap">교육</span>
         <div class="main-col2-row1-01">
@@ -149,8 +149,12 @@
             취업 역량 강화를 통한 취업 문제 해결 도움, 건강한 사회 구성원으로 성장 도움 <br>
           </span>
         </div>
-        <br><br>
-        <div class="main-col2-row1-03">
+      </div>
+
+      <a id="anc-business-02"></a><br><br>
+      <div class="main-col2-row2">
+        <span class="main-chap">문화예술</span>
+        <div class="main-col2-row2-01">
           <span class="main-subchap"> 두드림(Do Dream) </span>
           <!-- <img src="" alt="두드림(Do Dream)"> <br> -->
           <span>
@@ -159,17 +163,9 @@
         </div>
       </div>
 
-      <a id="anc-business-02"></a><br>
-      <div class="main-col2-row2">
-        <span class="main-chap">문화예술</span>
-        <img src="">
-        <span> 준비 중입니다. </span> <br>
-      </div>
-
-      <a id="anc-business-03"></a><br>
+      <a id="anc-business-03"></a><br><br>
       <div class="main-col2-row3">
         <span class="main-chap">심리정서</span>
-        <img src="">
         <span> 준비 중입니다. </span> <br>
       </div>
 
