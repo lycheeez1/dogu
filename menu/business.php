@@ -85,6 +85,7 @@
           <a href="intro.php">도구(Dogu)</a>
           <ul class="gnb-menu-d2" id="gnb-menu-d2-dogu">
             <li><a href="intro.php">인사말</a></li>
+            <li><a href="intro.php#anc-dogu-05">미션과 비전</a></li>
             <li><a href="intro.php#anc-dogu-02">연혁</a></li>
             <li><a href="intro.php#anc-dogu-03">함께하는 사람들</a></li>
             <li><a href="intro.php#anc-dogu-04">오시는 길</a></li>
@@ -128,44 +129,43 @@
       &nbsp
     </div>
     <div class="main-col2">
-      <a id="anc-business-01"><br></a>
+      <a id="anc-business-01"></a><br>
       <div class="main-col2-row1">
         <span class="main-chap">교육</span>
-        <span> KB라스쿨(La School) </span> <br>
-        <img src="https://modo-phinf.pstatic.net/20210826_37/1629944985313cXfhx_PNG/mosaet84Jh.png" alt="KB라스쿨"> <br>
-        <span>
-	  온라인 교육 플랫폼으로 스타 강사의 실시간 온라인 강의, 1:1 맞춤 멘토링, 자기주도학습 역량 강화 프로그램 지원을 통해 <br>
-	  균등한 교육 기회와 학습 능력 향상의 기회를 제공<br><br>
-        </span>
-      </div>
-      <div class="main-col2-row1">
-        <span> KB국민은행 IT아카데미 IT’s Your Life </span> <br>
-        <img src="https://modo-phinf.pstatic.net/20210826_37/1629944985313cXfhx_PNG/mosaet84Jh.png" alt="KB라스쿨"> <br>
-        <span>
-	  양질의 IT 교육 지원을 통한 디지털 역량 강화로 디지털 금융 개발자 양성, 진로 체험 기회 제공<br>
-	  취업 역량 강화를 통한 취업 문제 해결 도움, 건강한 사회 구성원으로 성장 도움<br><br>
-        </span>
-      </div>
-      <div class="main-col2-row1">
-        <span> 두드림(Do Dream) </span> <br>
-        <img src="https://modo-phinf.pstatic.net/20210826_37/1629944985313cXfhx_PNG/mosaet84Jh.png" alt="KB라스쿨"> <br>
-        <span>
-	  문화, 예술 분야를 전공하는 청소년 및 청년에게 <br>
-	  전문 강사, 작품 창작 및 활동비 지원을 통해 미래 인재로 성장할 수 있는 기회 제공<br><br>
-        </span>
+        <div class="main-col2-row1-01">
+          <span class="main-subchap"> KB라스쿨(La School) </span>
+          <img src="https://modo-phinf.pstatic.net/20210826_37/1629944985313cXfhx_PNG/mosaet84Jh.png" alt="KB라스쿨(La School)"> <br>
+          <span>
+            온라인 교육 플랫폼으로 스타 강사의 실시간 온라인 강의, 1:1 맞춤 멘토링, 자기주도학습 역량 강화 프로그램 지원을 통해 <br>
+            균등한 교육 기회와 학습 능력 향상의 기회를 제공
+          </span>
+        </div>
+        <br><br>
+        <div class="main-col2-row1-02">
+          <span class="main-subchap"> KB국민은행 IT아카데미 IT’s Your Life </span>
+          <!-- <img src="" alt="KB국민은행 IT아카데미 IT’s Your Life"> <br> -->
+          <span>
+            양질의 IT 교육 지원을 통한 디지털 역량 강화로 디지털 금융 개발자 양성, 진로 체험 기회 제공 <br>
+            취업 역량 강화를 통한 취업 문제 해결 도움, 건강한 사회 구성원으로 성장 도움 <br>
+          </span>
+        </div>
       </div>
 
-      <a id="anc-business-02"></a><br>
+      <a id="anc-business-02"></a><br><br>
       <div class="main-col2-row2">
         <span class="main-chap">문화예술</span>
-        <img src="">
-        <span> 준비 중입니다. </span> <br>
+        <div class="main-col2-row2-01">
+          <span class="main-subchap"> 두드림(Do Dream) </span>
+          <!-- <img src="" alt="두드림(Do Dream)"> <br> -->
+          <span>
+            문화, 예술 분야를 전공하는 청소년 및 청년에게 전문 강사, 작품 창작 및 활동비 지원을 통해 미래 인재로 성장할 수 있는 기회 제공
+          </span>
+        </div>
       </div>
 
-      <a id="anc-business-03"></a><br>
+      <a id="anc-business-03"></a><br><br>
       <div class="main-col2-row3">
         <span class="main-chap">심리정서</span>
-        <img src="">
         <span> 준비 중입니다. </span> <br>
       </div>
 
@@ -233,7 +233,7 @@
       <div class="footer-col1-info">
         <span>TEL 02-3409-7477 &nbsp; | &nbsp; FAX 02-3409-7478 &nbsp; <br/>
         <span>사단법인 도구 &nbsp; | &nbsp; EMAIL <a href="mailto:nanum@dogu.or.kr">nanum@dogu.or.kr</a></span> <br/>
-        <span>서울시 성동구 아차산로7나길 18 에이팩센터 507호</span> <br/>
+        <span>서울시 성동구 아차산로7나길 18 에이팩센터 908호</span> <br/>
         <span>Copyright &copy; 2021 Dogu All rights reserved.</span>
       </div>
     </div>
